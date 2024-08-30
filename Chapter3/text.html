@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Text</title>
+</head>
+<body>
+    <nav class="bg-body-tertiary">
+        <div class="d-flex">
+            <a class="align-self-center m-2 ms-3" fdprocessedid="a7scb4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"></path>
+                </svg>
+            </a>
+            <h1 style="font-size: 48px; margin-left: 48px; padding: 20px 0;">Chapter 3: Text styling in CSS</h1>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <br><br>
+        <h2>Topics we are going to learn in this page: </h2>
+        <ol>
+            <li><a href="#font-family"><strong>font-family property</strong></a></li>
+            <li><a href="#custom-font"><strong>Adding custom font</strong></a></li>
+            <li><a href="#font-size"><strong>font-size property</strong></a></li>
+            <li><a href="#font-weight"><strong>font-weight property</strong></a></li>
+            <li><a href="#font-style"><strong>font-style property</strong></a></li>
+            <li><a href="#font"><strong>font property</strong></a></li>
+            <li><a href="#text-align"><strong>text-align property</strong></a></li>
+            <li><a href="#letter-spacing"><strong>letter-spacing property</strong></a></li>
+            <li><a href="#word-spacing"><strong>word-spacing property</strong></a></li>
+            <li><a href="#line-height"><strong>line-height property</strong></a></li>
+            <li><a href="#text-shadow"><strong>text-shadow property</strong></a></li>
+            <li><a href="#text-transform"><strong>text-transform property</strong></a></li>
+            <li><a href="#text-decoration"><strong>text-decoration property</strong></a></li>
+            <li><a href="#list-style-type"><strong>list-style-type property</strong></a></li>
+            <li><a href="#Pseudo-classes"><strong>Pseudo-classes</strong></a></li>
+            <li><a href="#cursor"><strong>cursor property</strong></a></li>
+            
+        </ol>
+        <br>
+
+        <h2>Explantion of the topics: </h2>
+        <ol>
+            <!-- font-family -->
+            <li>
+                <h3 id="font-family"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family">font-family </a>property:</h3>
+                <ul>
+                    <li>The font-family property specifies the font for an element.</li>
+                    <li>The font-family property can hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font.</li>
+                    <li>Start with the font you want, and always end with a generic family, to let the browser pick a similar font in the generic family, if no other fonts are available.</li>
+                        <br><br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-family.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- Adding custom font -->
+            <li>
+                <h3 id="custom-font">Adding custom font</h3>
+                <ul>
+                    <li>We can add custom font in our website, which fonts are not present in the browser or in the OS.</li>
+                    <li>Here is the step by step process to add custom font using google font:</li>
+                    <ol>
+                        <li>Visit: <a href="https://fonts.google.com">fonts.google.com</a></li>
+                        <li>Search and select the font</li>
+                        <li>Click on "Get font" or Cart symbol on the top right corner of the page</li>
+                        <li>Click on "Get embed code"</li>
+                        <li>Copy the &ltlink&gt tag code & paste it inside the head part of the HIML file. <br>or,<br>Copy the @import code & paste it inside &ltstyle&gt tag of HTML or inside CSS file.</li>
+                        <li>Now we can use this custom font in out site by adding the font name in the font-family css property.</li>
+                    </ol>
+                </ul>
+            </li>
+
+            <!-- font-size -->
+            <li>
+                <h3 id="font-size"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size">font-size </a> property:</h3>
+                <ul>
+                    <li>The font-size property sets the size of a font.</li>
+                    <li>The values can be (Size units will be discussed in the Unit chapter) :</li>
+                    <pre>
+    <code>
+        /* absolute-size values */
+        font-size: xx-small;
+        font-size: x-small;
+        font-size: small;
+        font-size: medium;
+        font-size: large;
+        font-size: x-large;
+        font-size: xx-large;
+        font-size: xxx-large;
+        
+        /* relative-size values */
+        font-size: smaller;
+        font-size: larger;
+        
+        /* length values */
+        font-size: 12px;
+        font-size: 0.8em;
+        
+        /* percentage values */
+        font-size: 80%;
+        
+        /* math value */
+        font-size: math;
+        
+        /* Global values */
+        font-size: inherit;
+        font-size: initial;
+        font-size: revert;
+        font-size: revert-layer;
+        font-size: unset;                               
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-size.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- font-weight -->
+            <li>
+                <h3 id="font-weight"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">font-weight</a> property:</h3>
+                <ul>
+                    <li>The font-weight property sets how thick or thin characters in text should be displayed.</li>
+                    <li>The values can be:</li>
+                    <pre>
+    <code>
+        /* font-weight-absolute keyword values */
+        font-weight: normal;
+        font-weight: bold;
+        
+        /* font-weight-absolute numeric values [1,1000] */
+        font-weight: 100;
+        font-weight: 200;
+        font-weight: 300;
+        font-weight: 400; /* normal */
+        font-weight: 500;
+        font-weight: 600;
+        font-weight: 700; /* bold */
+        font-weight: 800;
+        font-weight: 900;
+        
+        /* Keyword values relative to the parent */
+        font-weight: lighter;
+        font-weight: bolder;
+        
+        /* Global values */
+        font-weight: inherit;
+        font-weight: initial;
+        font-weight: revert;
+        font-weight: revert-layer;
+        font-weight: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-weight.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- font-style -->
+            <li>
+                <h3 id="font-style"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style">font-style </a> property:</h3>
+                <ul>
+                    <li>The font-style CSS property sets whether a font should be styled with a normal, italic, or oblique face from its font-family.</li>
+                    <li>The values can be:</li>
+                    <pre>
+    <code>
+        font-style: normal;
+        font-style: italic;
+        font-style: oblique;
+        font-style: oblique 10deg;
+
+        /* Global values */
+        font-style: inherit;
+        font-style: initial;
+        font-style: revert;
+        font-style: revert-layer;
+        font-style: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/font-style.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+            
+            <!-- font -->
+            <li>
+            <h3 id="font"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font">font </a> property</h3>
+            <ul>
+                <li>The font CSS shorthand property sets all the different properties of an element's font.</li>
+                <li>This property is a shorthand for the following CSS properties: font-family, font-size, font-stretch, font-style, font-variant, font-weight, line-height</li>
+                <li>It is better to use font properties separately because it's complexity of specific ordering.</li>
+                <br><br>
+                <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/font.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+            </ul>
+            </li>
+
+            <!-- text-align -->
+            <li>
+                <h3 id="text-align"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align">text-align </a> property:</h3>
+                <ul>
+                    <li>The text-align property specifies the horizontal alignment of text in an element.</li>
+                    <li>The values can be:</li>
+                    <pre>
+    <code>
+        /* Keyword values */
+        text-align: start;
+        text-align: end;
+        text-align: left;
+        text-align: right;
+        text-align: center;
+        text-align: justify;
+        text-align: justify-all;
+        text-align: match-parent;
+
+        /* Block alignment values (Non-standard syntax) */
+        text-align: -moz-center;
+        text-align: -webkit-center;
+
+        /* Global values */
+        text-align: inherit;
+        text-align: initial;
+        text-align: revert;
+        text-align: revert-layer;
+        text-align: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-align.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- letter-spacing -->
+            <li>
+                <h3 id="letter-spacing"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing">letter-spacing</a> property:</h3>
+                <ul>
+                    <li>The letter-spacing property increases or decreases the space between characters in a text. The value can be negative.</li>
+                    <li>The values can be:</li>
+                    <pre>
+    <code>
+        /* Keyword value */
+        letter-spacing: normal;
+
+        /* length values */
+        letter-spacing: 0.3em;
+        letter-spacing: 3px;
+        letter-spacing: 0.3px;
+
+        /* Global values */
+        letter-spacing: inherit;
+        letter-spacing: initial;
+        letter-spacing: revert;
+        letter-spacing: revert-layer;
+        letter-spacing: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/letter-spacing.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- word-spacing -->
+            <li>
+                <h3 id="word-spacing"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing">word-spacing </a> property</h3>
+                <ul>
+                    <li>The word-spacing property increases or decreases the white space between words. Similar to letter-spacing the value can be negative.</li>
+                    <li>The values can be:</li>
+                    <pre>
+    <code>
+        /* Keyword value */
+        word-spacing: normal;
+
+        /* length values */
+        word-spacing: 3px;
+        word-spacing: 0.3em;
+
+        /* Global values */
+        word-spacing: inherit;
+        word-spacing: initial;
+        word-spacing: revert;
+        word-spacing: revert-layer;
+        word-spacing: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/word-spacing.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- line-height -->
+            <li>
+                <h3 id="line-height"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height">line-height </a> property:</h3>
+                <ul>
+                    <li>The line-height property specifies the height of a line.</li>
+                    <li>The values can be a keyword "normal", non-negative numeric value with or without unit, percentage value and other global values (inherit, initial, revert, revert-layer, unset).</li>
+                    <li>The numeric value without unit represent the height of the line as the number multiplied by the font size. Percentage value also works the same.</li>
+                    <br><br>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/line-height.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- text-shadow -->
+            <li>
+                <h3 id="text-shadow"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">text-shadow </a> property:</h3>
+                <ul>
+                    <li>The text-shadow property adds shadow to text. </li>
+                    <li>We can add multiple shadow to a text by giving multiple sets of shadow values seperated by comma. Eg: <code>text-shadow: 2px 2px #f00, 4px 4px 3px #0f0;</code></li>
+                    <li>Each shadow is specified as two compulsory values <code>offset-x</code> and <code>offset-y</code>, followed by two optional value <code>blur-radius</code> & <code>color</code>. Example:</li>
+                    <pre>
+    <code>
+        /* offset-x | offset-y | blur-radius | color */
+        text-shadow: 1px 1px 2px black;
+
+        /* color | offset-x | offset-y | blur-radius */
+        text-shadow: #fc0 1px 0 10px;
+
+        /* offset-x | offset-y | color */
+        text-shadow: 5px 5px #558abb;
+
+        /* color | offset-x | offset-y */
+        text-shadow: white 2px 5px;
+
+        /* offset-x | offset-y
+        /* Use defaults for color and blur-radius */
+        text-shadow: 5px 10px;
+
+        /* Global values */
+        text-shadow: inherit;
+        text-shadow: initial;
+        text-shadow: revert;
+        text-shadow: revert-layer;
+        text-shadow: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-shadow.html" title="MDN Web Docs Interactive Example" allow="clipboard-write" ></iframe>
+                </ul>
+            </li>
+
+            <!-- text-transform -->
+            <li>
+                <h3 id="text-transform"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform">text-transform </a> property:</h3>
+                <ul>
+                    <li>The text-transform property is used to turn the text into all-uppercase or all-lowercase letters, or capitalize the first letter of each word.</li>
+                    <li>The values can be:</li>
+                    <pre>
+    <code>
+        /* Keyword values */
+        text-transform: none;
+        text-transform: capitalize;
+        text-transform: uppercase;
+        text-transform: lowercase;
+        text-transform: full-width;
+        text-transform: full-size-kana;
+
+        /* Global values */
+        text-transform: inherit;
+        text-transform: initial;
+        text-transform: revert;
+        text-transform: revert-layer;
+        text-transform: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-transform.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- text-decoration -->
+            <li>
+                <h3 id="text-decoration"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration">text-decoration </a> property:</h3>
+                <ul>
+                    <li>The <code>text-decoration</code> property is a shorthand property for <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line">text-decoration-line</a></code> (required), <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color">text-decoration-color</a></code> (optional), <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style">text-decoration-style</a></code> (optional), <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness">text-decoration-thickness</a></code> (optional)</li>
+                    <li>This property is used to add a decoration line to text.</li>
+                    <li>We can add multiple text-decoration-line value (no comma is needed in between.)</li><br>
+                    
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line">text-decoration-line</a></code> property sets the kind of line decoration that is used on text in an element, such as an underline or overline</li>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-decoration-line.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe><br><br>
+                    
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color">text-decoration-color</a></code> property sets the color of decorations added to text by <code>text-decoration-line</code>.</li>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-decoration-color.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe><br><br>
+                    
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style">text-decoration-style</a></code> property sets the style of the lines specified by <code>text-decoration-line</code>. The style applies to all lines that are set with <code>text-decoration-line</code>.</li>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-decoration-style.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe><br><br>
+                    
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness">text-decoration-thickness</a></code> property is used to set the thickness of the decoration line.</li>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-decoration-thickness.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe><br><br>
+                    
+                    <li><code>text-decoration</code> shorthand property example:</li>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/text-decoration.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- list-style-type -->
+            <li>
+                <h3 id="list-style-type"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">list-style-type </a> property:</h3>
+                <ul>
+                    <li>The <code>list-style-type</code> property sets the marker (such as a disc, character, or custom counter style) of a list item element.</li>
+                    <pre>
+    <code>
+        /* Partial list of types */
+        list-style-type: disc;
+        list-style-type: circle;
+        list-style-type: square;
+        list-style-type: decimal;
+        list-style-type: georgian;
+        list-style-type: trad-chinese-informal;
+        list-style-type: kannada;
+
+        /* string value */
+        list-style-type: "-";
+
+        /* Identifier matching an @counter-style rule */
+        list-style-type: custom-counter-style;
+
+        /* Keyword value */
+        list-style-type: none;
+
+        /* Global values */
+        list-style-type: inherit;
+        list-style-type: initial;
+        list-style-type: revert;
+        list-style-type: revert-layer;
+        list-style-type: unset;
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/list-style-type.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- Pseudo-classes (Selector) -->
+            <li>
+                <h3 id="Pseudo-classes"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">Pseudo-classes:</a></h3>
+                <ul>
+                    <li>A pseudo-class is used to define a special state of an element.</li>
+                    <li>For example, it can be used to: Style an element when a user mouses over it (:hover), Style visited (:visited) and unvisited links differently, Style an element when it gets focus</li>
+                    <br>
+
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited">:visited</a></code> works like a special selector. This pseudo-class applies only to &lta&gt and &ltareagt elements that have an href attribute. This apply the css properties applies once the link has been visited by the user. Example: a:visited{css properties}.</li>
+                    <iframe class="interactive is-tabbed-shorter-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/pseudo-class-visited.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe> <br><br>
+
+                    <li><code>:hover</code> works like a special selector. It is generally apply the css properties when the user hovers over an element with the cursor (mouse pointer). Example: button:hover{css properties}.</li>
+                    <iframe class="interactive is-tabbed-shorter-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/tabbed/pseudo-class-hover.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- cursor -->
+            <li>
+                <h3 id="cursor"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">cursor</a></h3>
+                <ul>
+                    <li>The cursor property specifies the mouse cursor to be displayed when pointing over an element.</li>
+                    <pre>
+    <code>
+        /* Keyword value */
+        cursor: auto;
+        cursor: pointer;
+        cursor: zoom-in;
+        cursor: zoom-out;
+        cursor: none;
+
+        /* URL with mandatory keyword fallback */
+        cursor: url(hand.cur), pointer;
+
+        /* URL and coordinates, with mandatory keyword fallback */
+        cursor:
+        url(cursor_1.png) 4 12,
+        auto;
+        cursor:
+        url(cursor_2.png) 2 2,
+        pointer;
+
+        /* URLs and fallback URLs (some with coordinates), with mandatory keyword fallback */
+        cursor:
+        url(cursor_1.svg) 4 5,
+        url(cursor_2.svg),
+        /* …, */ url(cursor_n.cur) 5 5,
+        progress;
+
+        /* Global values */
+        cursor: inherit;
+        cursor: initial;
+        cursor: revert;
+        cursor: revert-layer;
+        cursor: unset;
+
+    </code>
+                    </pre>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/cursor.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- End -->
+        </ol>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+</body>
+</html>
+
+

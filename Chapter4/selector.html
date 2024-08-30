@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Selectors</title>
+</head>
+<body>
+    <nav class="bg-body-tertiary">
+        <div class="d-flex">
+            <a class="align-self-center m-2 ms-3" fdprocessedid="a7scb4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"></path>
+                </svg>
+            </a>
+            <h1 style="font-size: 48px; margin-left: 48px; padding: 20px 0;">Chapter 4: Selectors in CSS</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><br>
+
+        <h2>Topics we are going to learn in this page: </h2>
+        <ol>
+            <li><a href="#Universal_selectors"><strong>Universal selectors</strong></a></li>
+            <li><a href="#Element_selectors"><strong>Element selectors</strong></a></li>
+            <li><a href="#ID_selectors"><strong>ID selectors</strong></a></li>
+            <li><a href="#Class_selectors"><strong>Class selectors</strong></a></li>
+            <li><a href="#Attribute_selectors"><strong>Attribute selectors</strong></a></li>
+            <li><a href="#Grouping_of_selectors"><strong>Grouping of selectors</strong></a></li>
+            <li><a href="#Descendant_Combinator_selectors"><strong>Descendant Combinator selectors</strong></a></li>
+            <li><a href="#Child_Combinator_selectors"><strong>Child Combinator selectors</strong></a></li>
+            <li><a href="#Adjacent_sibling_Combinator_selectors"><strong>Adjacent Sibling Combinator selectors</strong></a></li>
+            <li><a href="#Subsequent_sibling_Combinator_selectors"><strong>Subsequent Sibling Combinator selectors</strong></a></li>
+            <li><a href="#Compound_selectors"><strong>Compound selectors</strong></a></li>
+            <li><a href="#Pseudo_class_selectors"><strong>Pseudo class selectors</strong></a></li>
+            <li><a href="#Pseudo_element_selectors"><strong>Pseudo element selectors</strong></a></li>
+            <li><a href="#Specificity"><strong>Specificity</strong></a></li>
+
+        </ol>
+        <br>
+
+        <h2>Explantion of the topics: </h2>
+        <ol>
+            <!-- Universal selectors -->
+            <li>
+                <h3 id="Universal_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors">Universal selectors:</a></h3>
+                <ul>
+                    <li>The universal selector (*) select all HTML elements on the page. C  an also select all elements inside another element.</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        * {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/gONrzaw">Go</a></li>
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Universal selectors" src="https://codepen.io/Janarddan-Mandal/embed/gONrzaw?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/gONrzaw">
+                        Universal selectors</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+                </ul>
+            </li>
+
+            <!-- Element Selectors -->
+            <li>
+                <h3 id="Element_selectors"><a href="https://www.w3schools.com/cssref/sel_element.php">Element Selectors:</a></h3>
+                <ul>
+                    <li>The element selector selects all elements with the specified element name (Element name means tag name of html element).</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        tag_name {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/jOjqJNb">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &lth1&gtElement Selector Example:&lt/h1&gt
+        &ltp&gtParagraph 1&lt/p&gt
+
+        &lth2&gtH2 Element&lt/h2&gt
+        &ltp&gtParagraph 2&lt/p&gt
+        &ltp&gtParagraph 3&lt/p&gt
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        p{
+            color:red;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>This will select all the &ltp&gt tag elements & make the text color red.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Element Selector" src="https://codepen.io/Janarddan-Mandal/embed/jOjqJNb?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/jOjqJNb">
+                        Element Selector</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- ID selectors -->
+            <li>
+                <h3 id="ID_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors">ID Selectors:</a></h3>
+                <ul>
+                    <li>The CSS ID selector selects an element based on the value of the element's id attribute.</li>
+                    <li>According to html convention id name should only be used by one HTML element within a page.</li>
+                    <li>In CSS id valued elements are accessed by a "hash" symbol (#).</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        #id_name {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/ExBKMgo">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &ltp&gtText 1&lt/p&gt
+        &ltp id="paragraph2"&gtText 2&lt/p&gt
+        &ltp&gtText 3&lt/p&gt
+        &ltp&gtText 4&lt/p&gt
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        #paragraph2{
+            color:#f69;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>This will select the only &ltp&gt tag elements with id name "paragraph2" & apply the specific color to the text.</p>
+                    </li>
+                    <!-- Code pen code start -->
+                    <iframe height="300" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/ExBKMgo?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/ExBKMgo">
+                        Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                    <!-- Code pen code starend -->
+                </ul>
+            </li>
+            
+            <!-- Class selectors -->
+            <li>
+                <h3 id="Class_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">Class Selectors:</a></h3>
+                <ul>
+                    <li>The class selector selects all the elements with a specific class attribute.</li>
+                    <li>Unlike ID, we can apply same class name to multiple HTML elements in a page.</li>
+                    <li>In HTML if an element's class attribute value has a space in between that means that element has multiple class name. Eg: <code>&ltp class="Red Text"&gt</code>, means this &ltp&gt tag has two class name "Red" & "Text".</li>
+                    <li>In CSS class valued elements are accessed by a "dot"(.) symbol.</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        .class_name {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/qBzZwmW">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &ltol&gt
+            &ltli class="good"&gtList Item 1&lt/li&gt
+            &ltli class="good"&gtList Item 2&lt/li&gt
+            &ltli class="good"&gtList Item 3&lt/li&gt
+            &ltli&gtList Item 4&lt/li&gt
+            &ltli&gtList Item 5&lt/li&gt
+        &lt/ol&gt
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        .good{
+            font-weight: bold;
+            color: #0A4;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>This will select all the &ltp&gt tag elements with class name "good" & apply the css properties.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Class Selector" src="https://codepen.io/Janarddan-Mandal/embed/qBzZwmW?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/qBzZwmW">
+                        Class Selector</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- Attribute selectors -->
+            <li>
+                <h3 id="Attribute_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">Attribute selectors:   </a></h3>
+                <ul>
+                    <li>The CSS attribute selector matches elements based on the element having a given attribute explicitly set, with options for defining an attribute value or substring value match.    </li>
+                    <li>Syntax (There are <a href="https://www.w3schools.com/css/css_attribute_selectors.asp">multiple types</a> of syntax):
+                        <br><br>
+                        <ol type="I">
+                            <li> <code> [attribute_name] </code> : Selects all elements with an attribute name "attribute_name".</li>     <br>
+                            <li> <code> tag_name[attribute_name] </code> : Selects all "tag_name" elements with an attribute name "attribute_name". </li>     <br>
+                            <li> <code> tag_name[attribute_name="val"] </code> : Selects all "tag_name" elements with a "attribute_name" attribute whose value is exactly "val".</li>     <br>
+                            <li> <code> tag_name[attribute_name*="val"] </code> : Selects all "tag_name" elements with a "attribute_name" attribute value containing the substring "val".</li>    <br>
+                            <li> <code> [attribute_name^="val"] </code> : Selects all elements with a "attribute_name" attribute whose value starting with "val".</li>    <br>
+                            <li> <code> [attribute_name$="val"] </code> : Selects all elements with a "attribute_name" attribute whose value ending with "val".</li>      <br>
+                            <li> <code> [attribute_name~="val"] </code> : Selects all elements with a attribute "attribute_name" that contains a space-separated list of words, one of which is "val".</li>   <br>
+                        </ol>
+                    </li>
+
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/OJeNYNE">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &lth1 title="section"&gtAttribute selector example:&lt/h1&gt
+
+        &ltul title="section"&gt
+            &ltli&gt&lta href="#internal"&gtInternal link&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="http://example.com"&gtExample link&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="#InSensitive"&gtInsensitive internal link&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="http://example.org"&gtExample org link&lt/a&gt&lt/li&gt
+            &ltli&gt&lta href="https://example.org"&gtExample https org link&lt/a&gt&lt/li&gt
+        &lt/ul&gt
+
+        &ltform title="section"&gt
+            &ltinput type="text" placeholder="Name"&gt&ltbr&gt
+            &ltbutton title="click_to_submit_the_form"&gtSubmit&lt/button&gt
+        &lt/form&gt
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        [title]{
+            border: 2px solid blue;
+            width: 400px;
+        }
+        
+        input[type="text"]{
+            background-color: #6969;
+        }
+        
+        [title*="submit"]{
+            width: 200px;
+            background-color: gold;
+        }
+        
+        a[href^="#"] {
+            color: #690;
+        }
+        
+        a[href$=".org"] {
+            color: red;
+        }
+    </code>
+                            </pre>
+                        </div>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="500" width="1200px;" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/OJeNYNE?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/OJeNYNE">
+                        Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- Grouping Selector -->
+            <li>
+                <h3 id="Grouping_of_selectors"><a href="https://www.geeksforgeeks.org/explain-nesting-and-grouping-in-css/">Grouping of selectors:</a></h3>
+                <ul>
+                    <li>The CSS grouping selector is used to select multiple elements and style them together.</li>
+                    <li>This reduces the code and extra effort to declare common styles for each element. To group selectors, each selector is separated by a space.</li>
+                    <li>Different elements are separated by comma(,) symbol.</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        element_1, element_2, element_3 {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/poXymGj">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &lth1&gtHeading 1&lt/h1&gt
+        &lta href="https://www.google.com/"&gtGoogle&lt/a&gt
+        &lth2&gtHeading 2&lt/h2&gt  
+        &ltp&gtThis is a paragraph.&lt/p&gt
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        h1, h2, p{
+            color: orange;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>This css code will select &lth1&gt, &lth2&gt & &ltp&gt tag elements together & apply the css properties.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Grouping of Selectors" src="https://codepen.io/Janarddan-Mandal/embed/poXymGj?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/poXymGj">
+                        Grouping of Selectors</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- Descendant Combinator selectors -->
+            <li>    
+                <h3 id="Descendant_Combinator_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator">Descendant Combinator selectors:</a></h3>
+                <ul>
+                    <li>The descendant combinator selector matches all elements that are descendants (direct child, grand child, grand grand child & so on) of a specified element.</li>
+                    <li>Parent and descendant elements are seperated by a blank space.</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        parent_selector descendant_selector {    
+            css declarations;      
+        } 
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/vYqGqYV">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &ltp&gtParagraph 1 (Outer Div)&lt/p&gt 
+    
+        &ltdiv&gt 
+            &ltp&gtParagraph 2 (Inner Div)&lt/p&gt         
+            &ltul&gt
+                &ltli&gt
+                    &ltp&gtParagraph 3 (Inner list)&lt/p&gt
+                &lt/li&gt
+            &lt/ul&gt
+            &ltp&gtParagraph 4 (Inner Div)&lt/p&gt 
+            &ltp&gtParagraph 5 (Inner Div)&lt/p&gt
+        &lt/div&gt 
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        div p{
+            background-color:  lightblue;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>The example selects all &ltp&gt elements inside &ltdiv&gt elements & apply the css property.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Descendant Combinator selectors" src="https://codepen.io/Janarddan-Mandal/embed/vYqGqYV?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/vYqGqYV">
+                        Descendant Combinator selectors</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- Child Combinator selectors -->
+            <li>
+                <h3 id="Child_Combinator_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator">Child Combinator selectors:</a></h3>
+                <ul>
+                    <li>The child combinator selector only selects all elements that are direct child of a specified element.</li>
+                    <li>Parent and descendant elements are seperated by a greater then (>) symbol.</li> 
+                    <li>Child Combinator Syntax:</li>
+                    <pre>
+    <code>
+        parent_selector > descendant_selector {    
+            css declarations;      
+        } 
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/mdZPZVo">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &ltp&gtParagraph 1 (Outer Div)&lt/p&gt 
+    
+        &ltdiv&gt 
+            &ltp&gtParagraph 2 (Inner Div)&lt/p&gt       
+            &ltul&gt
+                &ltli&gt
+                    &ltp&gtParagraph 3 (Inner list)&lt/p&gt
+                &lt/li&gt
+            &lt/ul&gt
+            &ltp&gtParagraph 4 (Inner Div)&lt/p&gt 
+            &ltp&gtParagraph 5 (Inner Div)&lt/p&gt
+        &lt/div&gt 
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        div > p{
+            background-color:  #f696;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>The example selects only the &ltp&gt elements which are direct child of &ltdiv&gt elements & apply the css property.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Child Combinator selectors" src="https://codepen.io/Janarddan-Mandal/embed/mdZPZVo?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/mdZPZVo">
+                        Child Combinator selectors</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+
+            <!-- Adjacent Sibling Combinator selectors -->
+            <li>
+                <h3 id="Adjacent_sibling_Combinator_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator">Adjacent Sibling Combinator selectors:</a></h3>
+                <ul>
+                    <li>The adjacent sibling selector is used to select an element that is directly after another specific element and both are children of the same parent element.</li>
+                    <li>Both sibling elements are seperated by a plus (+) symbol.</li> 
+                    <li>Adjacent Sibling Combinator Syntax:</li>
+                    <pre>
+    <code>
+        sibling_selector + sibling_selector {    
+            css declarations;      
+        } 
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/yLdVVax">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &lt;div class="red"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+        &lt;div class="blue"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+        &lt;div class="red"&gt;&lt;/div&gt;
+        &lt;div class="blue"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+
+        &lt;!-- CSS --&gt;
+        &lt;style&gt;
+            div{
+                width: 150px;
+                height: 20px;
+                margin: 5px 0;
+            }
+            .red{
+                background-color: #f009;        
+            }
+            .green{
+                background-color: #0f09;    
+            }
+            .blue{
+                background-color: #00f9;    
+            }
+        &lt;/style&gt; 
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        .red + .green{
+            width: 300px;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>The example selects the elements with class "green" only when "green" class element comes immidiately after a "red" class element & apply the css property.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Adjacent Sibling Combinator selectors:" src="https://codepen.io/Janarddan-Mandal/embed/yLdVVax?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/yLdVVax">
+                        Adjacent Sibling Combinator selectors:</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- Subsequent Sibling Combinator selectors -->
+            <li>
+                <h3 id="Subsequent_sibling_Combinator_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator">Subsequent Sibling Combinator selectors:</a></h3>
+                <ul>
+                    <li>The subsequent sibling combinator selector selects all elements that are next siblings of a specified element. and both are children of the same parent element.</li>
+                    <li>Both sibling elements are seperated by a tilde (~) symbol.</li> 
+                    <li>Subsequent Sibling Combinator Syntax:</li>
+                    <pre>
+    <code>
+        sibling_selector ~ sibling_selector {    
+            css declarations;      
+        } 
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/GRbNNjr">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &lt;div class="red"&gt;&lt;/div&gt;
+        &lt;div class="blue"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+        &lt;section&gt;
+            &lt;div class="blue"&gt;&lt;/div&gt;
+            &lt;div class="green"&gt;&lt;/div&gt;
+            &lt;div class="red"&gt;&lt;/div&gt;
+        &lt;/section&gt;
+        &lt;div class="blue"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+
+
+        &lt;!-- CSS --&gt;
+        &lt;style&gt;
+            div{
+                width: 150px;
+                height: 20px;
+                margin: 5px 0;
+            }
+            .red{
+                background-color: #f009;        
+            }
+            .green{
+                background-color: #0f09;    
+            }
+            .blue{
+                background-color: #00f9;    
+            }
+        &lt;/style&gt;
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        .red ~ .green{
+            width: 300px;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>The example selects all the elements with class "green" when "green" class element is a sibling (same parent) of "red" class element & apply the css property.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Subsequent-sibling combinator" src="https://codepen.io/Janarddan-Mandal/embed/GRbNNjr?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/GRbNNjr">
+                        Subsequent-sibling combinator</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- Compound selectors -->
+            <li>
+                <h3 id="Compound_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors/Selector_structure#compound_selector">Compound selectors:</a></h3>
+                <ul>
+                    <li>A compound selector is a sequence of simple selectors that are not separated by a combinator.</li>
+                    <li>A compound selector represents a set of simultaneous conditions on a single element. A given element is said to match a compound selector when the element matches all the simple selectors in the compound selector.</li>
+                    <li>The conditions can be specific class name or id or any other attribute. There is no white-space or any symbol between those simple selector.</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        SelectorCondition {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/rNELWvx">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &ltdiv&gt
+            &ltp&gtparagraph 1&lt/p&gt
+            &ltul&gt
+                &ltli class="notes"&gtList item 1&lt/li&gt
+                &ltli title="wiki"&gtList item 2&lt/li&gt
+                &ltli title="web"&gt&lta href="#"&gtLink 1&lt/a&gt&lt/li&gt
+                &ltli class="notes"&gt&lta href="#"&gtLink 2&lt/a&gt&lt/li&gt
+                &ltli title="web"&gt&lta href="#"&gtLink 3&lt/a&gt&lt/li&gt
+            &lt/ul&gt
+        &lt/div&gt
+        &ltdiv class="notes"&gtText 1&lt/div&gt
+        &ltdiv class="notes"&gtText 3&lt/div&gt
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        div.notes{
+            background-color: aqua;
+        }
+        
+        li[title]{
+            font-weight: bold;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>This will select only those &ltdiv&gt tag elements which have a class name "notes" & make the background color aqua. And also select only those &lt;li&gt; tags which have a title attribute & make the text bold.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/rNELWvx?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/rNELWvx">
+                        Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+                </ul>
+            </li>
+
+            <!-- Pseudo class selectors -->
+            <li>
+                <h3 id="Pseudo_class_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#input_pseudo-classes">Pseudo class selectors:</a></h3>
+                <ul>
+                    <li>A pseudo-class is used to select a special state of an element.</li>
+                    <li>For example, it can be used to Style an element when a user mouses over it (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">:hover</a>), Style visited (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited">:visited</a>) and unvisited links differently, Style an element when it gets focus (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus">:focus</a> )</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type">:nth-of-type()</a> matches elements based on their position among siblings of the same type (tag name).</li>
+                    <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child">:first-child</a> CSS pseudo-class represents the first element among a group of sibling elements.</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        Selector:pseudo-class {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/xxoOgey">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;
+        &nbsp;&nbsp;&nbsp;
+        &lt;a href="https://www.wikipedia.org/"&gt;Wikipedia&lt;/a&gt;&lt;br&gt;
+        &lt;a href="https://www.w3schools.com/cssref/css_selectors.php"&gt;CSS Selector Reference (w3schools)&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;form action=""&gt;
+            &lt;input type="text" name="username" placeholder="Enter your username" /&gt;&lt;br&gt;
+            &lt;input type="email" name="emailid" placeholder="Enter your email-id" /&gt;&lt;br&gt;
+            &lt;button&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+        &lt;ol&gt;
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+            &lt;li&gt;Item 3&lt;/li&gt;
+            &lt;li&gt;Item 4&lt;/li&gt;
+            &lt;li&gt;Item 5&lt;/li&gt;
+            &lt;li&gt;Item 6&lt;/li&gt;
+            &lt;li&gt;Item 7&lt;/li&gt;
+        &lt;/ol&gt;
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        a:visited {
+            color: forestgreen;
+        }
+        /* This :visited pseudo class affect is not showing properly in codepen.io */
+        /* codepen.io marking all the link as visited. */
+        input:focus{
+            background-color: #ff06;
+        }
+        button:hover{
+            background-color: #0ff6;
+        }
+        li:nth-of-type(2n-1){
+            background-color: #0f06;
+        }
+        li:nth-child(2){
+            color:#e95400;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>This above css will select the input box and app the css property when we click on them. (For Submit button) Apply the css properties when we hover over the submit button. (For links) Apply the css properties when we clinked on the links.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Pseudo class selectors" src="https://codepen.io/Janarddan-Mandal/embed/xxoOgey?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/xxoOgey">
+                        Pseudo class selectors</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+                </ul>
+            </li>
+
+            <!-- Pseudo Element selectors -->
+            <li>
+                <h3 id="Pseudo_element_selectors"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">Pseudo Element selectors:</a></h3>
+                <ul>
+                    <li>A CSS pseudo-element is used to style specified parts of an element.</li>
+                    <li>For example, Style the first letter (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter">::first-letter</a>), or first line (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line">::first-line</a> ) of an element</li>
+                    <li>Syntax:</li>
+                    <pre>
+    <code>
+        Selector::pseudo-element {
+            css declarations;
+        }
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/vYqyxoN">Go</a>
+                        <div>
+                            <p>HTML:</p>
+                            <pre>
+    <code>
+        &lt;div&gt;
+            &lt;h2&gt;Pseudo Element selectors:&lt;/h2&gt;
+
+            &lt;p&gt;Scientists exploring the depths of Monterey Bay unexpectedly encountered a rare and unique species of dragonfish. This species is the rarest of its species.&lt;/p&gt;
+
+            &lt;p&gt;When Robison and a team of researchers discovered this fish, they were aboard a week-long expedition.&lt;/p&gt;
+        &lt;/div&gt;
+    </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <p>CSS:</p>
+                            <pre>
+    <code>
+        p{
+            font-family: open sans;
+            text-align: justify;
+        }
+        p::first-letter {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e95400;
+        }
+        div{
+            width: 270px;
+            border: 1px solid #00f;
+            padding: 0 32px;
+            background-color: #f0f1;
+            margin: auto;
+        }
+    </code>
+                            </pre>
+                        </div>
+                        <p>This above css will select first letter of all the &lt;p&gt; tag element and apply the css styling.</p>
+                    </li>
+
+                    <!-- Code pen code start -->
+
+                    <iframe height="300" width="900px" scrolling="no" title="Pseudo-elements" src="https://codepen.io/Janarddan-Mandal/embed/vYqyxoN?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/vYqyxoN">
+                        Pseudo-elements</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                    <!-- Code pen code end -->
+
+
+                </ul>
+            </li>
+
+            <!-- Specificity -->
+            <li>
+                <h3 id="Specificity"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Specificity</a>:</h3>
+                <ul>
+                    <li>If there are two or more CSS selector point to the same element, the selector with the highest specificity value will "win".</li>
+                    <li>The specificity value decreases in the following top to bottom order:
+                        <ul>
+                            <li>Inline style</li>
+                            <li>ID selectors</li>
+                            <li>class, attributes & pseudo-classes selectors</li>
+                            <li>Element & pseudo-element selectors</li>
+                        </ul>
+                    </li>
+                    <li>We can calculate the exact specificity value of a selector using 3 comma separated value(x,y,z).
+                        <ul>
+                            <li>1st value is the total number of id selectors,</li>
+                            <li>2nd value is the total number of class, attributes or pseudo-classes selectors,</li>
+                            <li>3rd value is the total number of element & pseudo-element selectors</li>
+                            <li>The in between space and any other symbols('+', '~', ',') have no value or significance in specificity calculation.</li>
+                            <li>In vs-code if we hover over a css selector in a css file then the specificity value is shown as a popup.</li>
+                            <li>Example:
+                                <pre>
+    <code>
+        div p {                     /* Specificity= (0,0,2) */
+            
+        } 
+
+        div>p>#green {              /* Specificity= (1,0,2) */
+            
+        } 
+
+        .top span{                  /* Specificity= (0,1,1) */
+            
+        } 
+
+        .main .text .wide {         /* Specificity= (0,3,0) */
+            
+        } 
+
+        div p>#green ~ a:hover {    /* Specificity= (1,1,3) */
+            
+        } 
+    </code>
+                                </pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Comparing specificity values:
+                        <ul>
+                            <li>First compare the 1st value of different selector, the selector with a greater number is selected & if both number are same then compare the 2nd value & similarly if 2nd vlaue is also same then compare between 3rd value.</li>
+                            <li>If 1st, 2nd & 3rd all values are same then the selector which is defined later is selected.</li>
+                        </ul>
+                    </li>
+                    <li><a href="https://web.dev/learn/css/the-cascade">The CSS Cascade rule.</a></li>
+                </ul>
+            </li>
+
+            <!-- End -->
+
+        </ol>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+</body>
+</html>

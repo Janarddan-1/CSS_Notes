@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="bg-body-tertiary">
+        <div class="d-flex">
+            <a class="align-self-center m-2 ms-3" fdprocessedid="a7scb4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"></path>
+                </svg>
+            </a>
+            <h1 style="font-size: 48px; margin-left: 48px; padding: 20px 0;">Chapter 10: Flexbox</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><br>
+        <h2>Topics we are going to learn in this page: </h2>
+        <ol>
+            <li><a href="#Introsduction"><strong>Flexbox Introduction</strong></a></li>
+            <li><a href="#Terminologies"><strong>Terminologies for flexbox</strong></a></li>
+            <li><a href="#display_flex"><strong><code>display: flex;</code></strong></a></li>
+            <li><a href="#Properties"><strong>Flexbox Properties</strong></a></li>
+            <li><a href="#flex-direction"><strong>flex-direction</strong></a></li>
+            <li><a href="#flex-wrap"><strong>flex-wrap</strong></a></li>
+            <li><a href="#flex-flow"><strong>flex-flow &nbsp;(shorthand)</strong></a></li>
+            <li><a href="#justify-content"><strong>justify-content</strong></a></li>
+            <li><a href="#align-items"><strong>align-items</strong></a></li>
+            <li><a href="#align-content"><strong>align-content</strong></a></li>
+            <li><a href="#order"><strong>order</strong></a></li>
+            <li><a href="#align-self"><strong>align-self</strong></a></li>
+            <li><a href="#flex-grow"><strong>flex-grow</strong></a></li>
+            <li><a href="#flex-shrink"><strong>flex-shrink</strong></a></li>
+            <li><a href="#flex-basis"><strong>flex-basis</strong></a></li>
+            <li><a href="#flex"><strong>flex &nbsp;(shorthand)</strong></a></li>
+            <li><a href="#Practice"><strong>Other cheat sheet & Practice</strong></a></li>
+        </ol>
+        <br>
+
+        <h2>Explantion of the topics: </h2>
+        <ol>
+            <!-- Introsduction -->
+            <li>
+                <h3 id="Introsduction"><a href="https://www.freecodecamp.org/news/the-css-flexbox-handbook/">Flexbox Introduction:</a></h3>
+                <ul>
+                    <li>Flexbox (Flexible Box Layout) is a CSS layout model that simplifies creating complex layouts.</li>
+                    <li>It provides a flexible way to align elements and distribute space within a container element.</li>
+                    <li>Note: Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the Grid layout is intended for larger scale layouts.</li>
+                </ul>
+            </li>
+
+            <!-- Terminologies -->
+            <li>
+                <h3 id="Terminologies"><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-basics-and-terminology">Terminologies for flexbox:</a></h3>
+                <ul>
+                    <li>Flex-Container or Flex-Parent: &nbsp; The HTML element that has "<code>display: flex</code>" set on it is called the flex-container or flex-parent.</li>
+                    <li>Flex-Item or Flex-Child: &nbsp; The items(HTML elements) inside the flex container are called flex items.</li>
+                    <img width="400px" src="./Flex_Container_and_Item.png" alt="">
+                    <li>Main-axis:
+                        <ul>
+                            <li>The main axis of a flex container is the primary axis along which flex items are laid out. </li>
+                            <li>The main axis is either horizontal or vertical depending on the value of the <code>flex-direction</code>.</li>
+                            <li>For <code>flex-direction</code> value <code>row</code> & <code>row-reverse</code> the main axis is horizontal.</li>
+                            <li>For <code>flex-direction</code> value <code>column</code> & <code>column-reverse</code> the main axis is vertical.</li>
+                        </ul>
+                    </li>
+                    <li>Cross-axis: The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.</li>
+                    <img width="500px" src="./flex_axis.png" alt="">
+                </ul>
+            </li>
+
+            <!-- display: flex -->
+            <li>
+                <h3 id="display_flex">&nbsp;<code>display: flex;</code></h3>
+                <ul>
+                    <li><code>display: flex;</code> make an element a flex container. It enables all its direct children for flexbox properties.</li>
+                    <li>All the  direct children (flex-items) of the flex container arranged according to the flex layout, their default <code>inline</code> or <code>block</code> nature does not work.</li>
+                    <li><code>display: flex;</code> This makes the flex container behave like a block-level element. The flex-container takes up the entire available width of its parent element.</li>
+                    <li><code>display: inline-flex;</code> This makes the flex-container behave like an inline-level element. This allows other inline elements to flow alongside it.</li>
+                </ul>
+            </li>
+
+            <!-- Flexbox Properties -->
+            <li>
+                <h3 id="Properties">Flexbox Properties:</h3>
+                <ul>
+                    <li>Flex Container Properties: (We apply these properties on the flex container, and not on its items.)
+                        <ul>
+                            <li><a href="#flex-direction">flex-direction</a></li>
+                            <li><a href="#flex-wrap">flex-wrap</a></li>
+                            <li><a href="#flex-flow">flex-flow</a></li>
+                            <li><a href="#justify-content">justify-content</a></li>
+                            <li><a href="#align-items">align-items</a></li>
+                            <li><a href="#align-content">align-content</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap">column-gap</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap">row-gap</a></li>
+                        </ul>
+                    </li>
+                    <li>Flex Item Properties: (We apply these properties to individual flex items.)
+                        <ul>
+                            <li><a href="#order">order</a></li>
+                            <li><a href="#align-self">align-self</a></li>
+                            <li><a href="#flex-grow">flex-grow</a></li>
+                            <li><a href="#flex-shrink">flex-shrink</a></li>
+                            <li><a href="#flex-basis">flex-basis</a></li>
+                            <li><a href="#flex">flex</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- flex-direction -->
+            <li>
+                <h3 id="flex-direction"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction">flex-direction</a> property (flex-container property):</h3>
+                <ul>
+                    <li>The <code>flex-direction</code> CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).</li>
+                    <li>Values can be:
+                        <ul>
+                            <li><code>row</code>: This displays the flex-items horizontally from left to right. (default value)</li>
+                            <li><code>row-reverse</code>: It displays the flex items from right to left.</li>
+                            <li><code>column</code>: This displays the flex-items vertically from top to bottom.</li>
+                            <li><code>column-reverse</code>: It displays the flex items from the bottom to the top.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: flex;
+            flex-direction: row-reverse; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/jOjwdeV">Go</a></li>
+                    <iframe height="400" width="900px" scrolling="no" title="flex-direction" src="https://codepen.io/Janarddan-Mandal/embed/jOjwdeV?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/jOjwdeV">
+                        flex-direction</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- flex-wrap -->
+            <li>
+                <h3 id="flex-wrap"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap">flex-wrap</a> property (flex-container property):</h3>
+                <ul>
+                    <li>The <code>flex-wrap</code> CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines.</li>
+                    <li>Values can be:
+                        <ul>
+                            <li><code>nowrap</code>: This keeps all the flex items on a single line either in a row or column. It allows the flex items to overflow if there's not enough room in the flex container. (default value)</li>
+                            <li><code>wrap</code>: This will wrap or push the flex items to the next line if there's not enough room for them.</li>
+                            <li><code>wrap-reverse</code>: Flex items will wrap onto multiple lines from bottom to top.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: flex;
+            flex-wrap: wrap; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/jOjLPNN">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="flex-wrap" src="https://codepen.io/Janarddan-Mandal/embed/jOjLPNN?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/jOjLPNN">
+                        flex-wrap</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- flex-flow -->
+            <li>
+                <h3 id="flex-flow"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-flow">flex-flow</a> property:(flex-container property)</h3>
+                <ul>
+                    <li>The <code>flex-flow</code> property is a shorthand property for <code>flex-direction</code> & <code>flex-wrap</code></li>
+                    <li>Values can be:
+                        <ul>
+                            <li>Single value: We can any 1 value from <code>flex-direction</code> & <code>flex-wrap</code> property value.</li>
+                            <li>Double value: 1 value from <code>flex-direction</code> property value & another 1 from <code>flex-wrap</code> property value, seperated by space. Ordering does not matter.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: flex;
+            flex-flow: row-reverse wrap;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/KKjvpyz">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/KKjvpyz?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/KKjvpyz">
+                        Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- justify-content -->
+            <li>
+                <h3 id="justify-content"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content">justify-content</a> property:(flex-container property)</h3>
+                <ul>
+                    <li>The <code>justify-content</code> CSS property defines how the browser distributes extra space between and around content items along the main axis.</li>
+                    <li>Values can be:
+                        <ul>
+                            <li><code>flex-start</code>: This will place  the flex-items at the start of the flex-direction (relative to <code>flex-direction</code>'s normal & reverse value).</li>
+                            <li><code>flex-end</code>: This will place the flex-items at the end of the flex-direction of the main axis (relative to <code>flex-direction</code>'s normal & reverse value).</li>
+                            <li><code>start</code>: This will place the flex-items at the start of the main axis. Left for <code>flex-direction: row or row-reverse</code> & top for <code>flex-direction: column or column-reverse</code>.</li>
+                            <li><code>end</code>: This will place the flex-items at the end of the main axis. Right for <code>flex-direction: row or row-reverse</code> & bottom for <code>flex-direction: column or column-reverse</code>.</li>
+                            <li><code>center</code>: This will places the flex items at the center of the flex container's main axis.</li>
+                            <li><code>space-between</code>: This will place the first flex item at the start of the main axis & the last flex item at the end of the main axis. Then space on the main axis is distributed equally among the the flex items.</li>
+                            <li><code>space-around</code>: This will distribute space equally between the flex items. The space before the first and after the last item equals half of the space between each pair of adjacent items.</li>
+                            <li><code>space-evenly</code>: Flex items are evenly distributed with equal space around them.</li>
+                            <li><code>stretch</code>, <code>normal</code></li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/ZEdJbLx">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="justify-content" src="https://codepen.io/Janarddan-Mandal/embed/ZEdJbLx?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/ZEdJbLx">
+                        justify-content</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- align-items -->
+            <li>
+                <h3 id="align-items"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items">align-items</a> property:(flex-container property)</h3>
+                <ul>
+                    <li>The <code>align-items</code> property handles the alignment of flex items on the cross-axis of the flex container.</li>
+                    <li>Values can be:
+                        <ul>
+                            <li><code>streach</code>: If the items have with or height set to "auto" along cross axis then, this value stretches the flex items to fill up the space within the flex-container. (default value)</li>
+                            <li><code>flex-start</code>: This will place the flex items at the start of the cross-axis of the flex container. If the cross-axis is vertical then it will place the items at the top.</li>
+                            <li><code>flex-end</code>: This will place the flex items at the end of the cross-axis of the flex container. If the cross-axis is vertical then it will place the items at the bottom.</li>
+                            <li><code>center</code>: This will align flex items at the center of the cross-axis of the flex container.</li>
+                            <li><code>baseline</code></li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/MWMvaPq">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="align-items" src="https://codepen.io/Janarddan-Mandal/embed/MWMvaPq?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/MWMvaPq">
+                        align-items</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- align-content -->
+            <li>
+                <h3 id="align-content"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-content">align-content</a> property:(flex-container property)</h3>
+                <ul>
+                    <li>The <code>align-content</code> CSS property sets the distribution of space between and around flex lines along cross axis.</li>
+                    <li>This property works only when <code>flex-wrap</code> is set to <code>wrap</code> or <code>wrap-reverse</code> and the flex items are wrapped into multiple lines or columns.</li>
+                    <li>Values can be:
+                        <ul>
+                            <li><code>normal</code> or <code>stretch</code>:(Default value) This will stretch the flex lines to take up the remaining space along cross axis. We can see the effect only when the width or height along cross axis is set to auto.</li>
+                            <li><code>flex-start</code>: This will place the flex lines at the start of the container's cross-axis. For example, if the cross axis is vertical then it will place the flex lines at the top.</li>
+                            <li><code>flex-end</code>: This will place the flex lines at the end of the container's cross-axis.</li>
+                            <li><code>center</code>: This will place the flex lines at the center of the container's cross-axis.</li>
+                            <li><code>space-between</code>: This will place the first flex line at the start of the cross-axis & the last flex line at the end of the cross axis. Then space on the cross-axis is distributed equally between the the lines.</li>
+                            <li><code>space-around</code>: This will distribute space equally between the flex lines. The space before the first and after the last flex line equals half of the space between each pair of adjacent flex lines.</li>
+                            <li><code>space-evenly</code>: Flex lines are evenly distributed with equal space around them.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/poXrNYR">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="align-content" src="https://codepen.io/Janarddan-Mandal/embed/poXrNYR?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/poXrNYR">
+                        align-content</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- order -->
+            <li>
+                <h3 id="order"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/order">order</a> property:(flex-item property)</h3>
+                <ul>
+                    <li>The <code>order</code> CSS property set the ordering of the flex items.</li>
+                    <li>The items are arranged in the ascending order according to their <code>order</code> number value.</li>
+                    <li>Default value 0.</li>
+                    <li>Practice using the order property: Even though the <code>order</code> value change the appearance on screen, the order in the HTML remains unchanged. And a screen reader software will read according to the HTML element ordering.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            order: 1; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/VwJzPoa">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="order" src="https://codepen.io/Janarddan-Mandal/embed/VwJzPoa?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/VwJzPoa">
+                        order</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- align-self -->
+            <li>
+                <h3 id="align-self"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-self">align-self</a> property:(flex-item property)</h3>
+                <ul>
+                    <li>The <code>align-self</code> CSS property works the same as <code>align-items</code> property but applied on individual flex items.</li>
+                    <li>The <code>align-self</code> property overrides the <code>align-items</code> property.</li>
+                    <li>Values are also same as <code>align-items</code>:
+                        <ul>
+                            <li><code>auto</code>: (Default value) The flex item inherits its parent container's <code>align-items</code> property value.</li>
+                            <li><code>streach</code></li>
+                            <li><code>flex-start</code></li>
+                            <li><code>flex-end</code></li>
+                            <li><code>center</code></li>
+                            <li><code>baseline</code></li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            align-self: center;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/RwzZLzm">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="align-self" src="https://codepen.io/Janarddan-Mandal/embed/RwzZLzm?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/RwzZLzm">
+                        align-self</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- flex-grow -->
+            <li>
+                <h3 id="flex-grow"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow">flex-grow</a> property:(flex-item property)</h3>
+                <ul>
+                    <li>The <code>flex-grow</code> CSS property defines the ability for a flex item to grow if there is extra space along main axis.</li>
+                    <li>By default <code>flex-grow</code> value is zero(0), means "off". Greater then 0 means "on".</li>
+                    <li>Value: Unit less non-negative number.(can be a point number).</li>
+                    <li>The browser treats the extra space as a value of 1. This means when we give a flex-grow value of 0.5 to only one of the flex items, the browser will add half of the remaining space to the item's size.</li>
+                    <li>If we set a flex-grow value of 1 to only one of the flex items, the browser will add all the extra space to that item.</li>
+                    <li>If we set a flex-grow value to only one of the flex items, then there is no difference between value 1 & 999 (any number greater then 1).</li>
+                    <li>If we set a flex-grow value to multiple flex items, then the space is distribute among these flex items according to the ratio of their flex-grow value.</li>
+                    <li>We can limit the maximum growth of an flex item by setting a <code>max-width</code> value.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            flex-grow: 1;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/dyBzJoG">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="flex-grow" src="https://codepen.io/Janarddan-Mandal/embed/dyBzJoG?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/dyBzJoG">
+                        flex-grow</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- flex-shrink -->
+            <li>
+                <h3 id="flex-shrink"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink">flex-shrink</a> property:(flex-item property)</h3>
+                <ul>
+                    <li>Default value of <code>flex-shrink</code> is 1, means "on". We can off the flex item shrinking property by setting the value "0".</li>
+                    <li>If the combined width of the items along the main axis is greater then the width of the flex container then they are shrinked down to fit into the container.</li>
+                    <li>Value: Unit less non-negative number.</li>
+                    <li>If we set different <code>flex-shrink</code> value to different flex items, then the shrinking happen according to the ratio of their value.</li>
+                    <li>We can limit the maximum shrinking of an flex item by setting a <code>min-width</code> value.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            flex-shrink: 2;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/mdZMXbL">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/mdZMXbL?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/mdZMXbL">
+                        Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- flex-basis -->
+            <li>
+                <h3 id="flex-basis"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis">flex-basis</a> property:(flex-item property)</h3>
+                <ul>
+                    <li>The <code>flex-basis</code> CSS property sets the initial main size of a flex item.</li>
+                    <li>Default value "auto".</li>
+                    <li><code>flex-basis</code> has more priority then <code>width</code> & <code>height</code>.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            flex-basis: 100px;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/BagdYmg">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="flex-basis" src="https://codepen.io/Janarddan-Mandal/embed/BagdYmg?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/BagdYmg">
+                        flex-basis</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- flex -->
+            <li>
+                <h3 id="flex"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">flex</a> property:(flex-item property)</h3>
+                <ul>
+                    <li>The <code>flex</code> CSS property is a shorthand property for:
+                        <ul>
+                            <li><a href="#flex-grow">flex-grow</a></li>
+                            <li><a href="#flex-shrink">flex-shrink</a></li>
+                            <li><a href="#flex-basis">flex-basis</a></li>
+                        </ul>
+                    </li>
+                    <li>Default values for <code>flex</code> is "<code>1 0 auto</code>". Values are seperated by a blank space.</li>
+                    <li>1 value: "flex-grow" (if unitless) or "flex-basis" (with unit)</li>
+                    <li>2 value: "flex-grow | flex-shrink (if unitless)"   or "flex-grow | flex-basis (with unit)"</li>
+                    <li>3 value: "flex-grow | flex-shrink | flex-basis"</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            flex: 1 1 100px;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/xxoLYBj">Go</a></li>
+                    <iframe height="400px" width="900px" scrolling="no" title="flex" src="https://codepen.io/Janarddan-Mandal/embed/xxoLYBj?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/xxoLYBj">
+                        flex</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- Other cheat sheet & Practice -->
+            <li>
+                <h3 id="Practice">Other cheat sheet & Practice :</h3>
+                <ul>             
+                    <li><a href="https://www.freecodecamp.org/news/the-css-flexbox-handbook/">FreeCodeCamp</a> CSS Flexbox Handbook</li>
+                    <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks</a> A Complete Guide to Flexbox</li>
+                    <li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
+                </ul>
+            </li>
+
+            <!-- End -->
+
+        </ol>
+    </div>
+
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+</body>
+</html>
+

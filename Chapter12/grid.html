@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!-- <html lang="en" data-bs-theme="light"> -->
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    
+    <nav class="bg-body-tertiary">
+        <div class="d-flex">
+            <a class="align-self-center m-2 ms-3" fdprocessedid="a7scb4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"></path>
+                </svg>
+            </a>
+            <h1 style="font-size: 48px; margin-left: 48px; padding: 20px 0;">Chapter 12: Grid </h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><br>
+
+        <h2>Topics we are going to learn in this page: </h2>
+        <br>
+        <ol>
+            <li><a href="#Introsduction"><strong>Grid Introduction</strong></a></li>
+            <li><a href="#Terminologies"><strong>Terminologies for grid</strong></a></li>
+            <li><a href="#display_grid"><strong><code>display: grid;</code></strong></a></li>
+            <li><a href="#Properties"><strong>Grid Properties</strong></a></li>
+            
+            <li><a href="#grid-template-columns"><strong>grid-template-columns</strong></a></li>
+            <li><a href="#grid-template-rows"><strong>grid-template-rows</strong></a></li>
+            <li><a href="#grid-template"><strong>grid-template (Shorthand)</a> </strong></li>
+            <li><a href="#column-gap_&_row-gap"><strong>column-gap & row-gap</strong></a></li>
+            <li><a href="#gap"><strong>gap (Shorthand)</a> </strong></li>
+            
+            <li><a href="#grid-column-start_&_grid-column-end"><strong>grid-column-start & grid-column-end</strong></a></li>
+            <!-- <li><a href="#"><strong></strong></a></li> -->
+            <li><a href="#grid-row-start_&_grid-row-end"><strong>grid-row-start & grid-row-end</strong></a></li>
+            <!-- <li><a href="#"><strong></strong></a></li> -->
+            <li><a href="#grid-column"><strong>grid-column (Shorthand)</strong></a></li>
+            <li><a href="#grid-row"><strong>grid-row (Shorthand)</strong></a></li>
+            <li><a href="#grid-area"><strong>grid-area (Shorthand)</strong></a></li>
+            <li><a href="#grid-template-areas"><strong>grid-template-areas</strong></a></li>
+            <li><a href="#grid-auto-flow"><strong>grid-auto-flow</strong></a></li>
+            <li><a href="#grid-auto-rows_&_grid-auto-columns"><strong>grid-auto-rows & grid-auto-columns</strong></a></li>
+            
+            <li><a href="#Practice"><strong>Other cheat sheet & Practice</strong></a></li>
+        
+        </ol>
+        <br><br>
+
+        <h2>Explantion of the topics: </h2>
+        <ol>
+            <!-- Introsduction -->
+            <li>
+                <h3 id="Introsduction"><a href="https://learncssgrid.com/">Grid Introduction:</a></h3>
+                <ul>
+                    <li>CSS Grid is a two-dimensional layout system created specifically to tackle grid-based user interfaces on the web.</li>
+                    <li>Grid vs Flexbox: Flexbox is more useful when we have to align items along a one-dimentional (1D) line (Row or Column). Grid is more useful when we have align the items along two-dimentional (2D) axis (Row & Column).</li>
+                </ul>
+            </li>
+
+            <!-- Terminologies -->
+            <li>
+                <h3 id="Terminologies"><a href="https://dev.to/busramemis/css-grid-layout-3kc1">Terminologies for flexbox:</a></h3>
+                <ul>
+                    <img width="400px" src="./Grid_Terminology.png" alt="">
+                    <li>Grid-Container or Grid-Parent: &nbsp; The HTML element that has "<code>display: grid</code>" set on it is called the grid-container or grid-parent.</li>
+                    <li>Grid-Item or Grid-Child: &nbsp; The items(HTML elements) inside the grid container are called grid items.</li>
+                    <img width="400px" src="./Grid_container.png" alt="">
+                    <li>Grid lines: &nbsp; Grid lines are the horizontal and vertical lines that form the basis of the grid structure. They are used to position items on the grid. We can refer to them by numerical index, which starts at 1.</li>
+                    <img width="400px" src="./Grid_line.png" alt="">
+                    <li>Grid Cell: &nbsp; A grid cell is the space between 2 adjacent row grid lines and 2 adjacent column grid lines.It’s a single “unit” of the grid.</li>
+                    <li>Grid track: &nbsp; A grid track is the space between 2 adjacent grid lines. They are the grid-rows and grid-columns. We can separate grid tracks with gutters, using the <code>grid-row-gap</code> and <code>grid-column-gap</code> properties.</li>
+                    <img width="400px" src="./Grid_cell.png" alt="">
+                    <li>Grid area: &nbsp; A grid area is one or more grid cells that make up a rectangular area on the grid. Grid areas are created when we place an item using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement">line-based placement</a> or when defining areas using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Grid_template_areas">named grid areas</a>.</li>
+                    <img width="400px" src="./Grid_area.png" alt="">
+                </ul>
+            </li>
+
+            <!-- display: grid -->
+            <li>
+                <h3 id="display_grid">&nbsp;<code>display: grid;</code></h3>
+                <ul>
+                    <li><code>display: grid;</code> make an element a grid container. It enables all its direct children for grid properties.</li>
+                    <li>All the  direct children (grid-items) of the grid container arranged according to the grid layout, their default <code>inline</code> or <code>block</code> nature does not work.</li>
+                    <li><code>display: grid;</code> This makes the grid container behave like a block-level element. The grid-container takes up the entire available width of its parent element.</li>
+                    <li><code>display: inline-grid;</code> This makes the grid-container behave like an inline-level element. This allows other inline elements to flow alongside it.</li>
+                </ul>
+            </li>
+
+            <!-- Grid Properties -->
+            <li>
+                <h3 id="Properties"><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#aa-css-grid-properties">Grid Properties:</a></h3>
+                <ul>
+                    <li><strong>Grid Container Properties:</strong> (We apply these properties on the grid container, and not on its items.)
+                        <ol type="i">
+                            <li><a href="#grid-template-columns">grid-template-columns</a></li>
+                            <li><a href="#grid-template-rows">grid-template-rows</a></li>
+                            <li><a href="#grid-template-areas">grid-template-areas</a></li>
+                            <li><a href="#grid-template">grid-template</a> (Shorthand for above i, ii, iii)</li>
+                            <li><a href="#column-gap">column-gap</a></li>
+                            <li><a href="#row-gap">row-gap</a></li>
+                            <li><a href="#gap">gap</a> (Shorthand for above v, vi)</li>
+                            <li><a href="#grid-auto-flow">grid-auto-flow</a></li>
+                            <li><a href="#grid-auto-columns">grid-auto-columns</a></li>
+                            <li><a href="#grid-auto-rows">grid-auto-rows</a></li>
+                            <span class="badge text-bg-light">Above 10 properites are exolaned in this page</span>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-justify-items">justify-items</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-align-items">align-items</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-place-items">place-items</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-justify-content">justify-content</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-align-content">align-content</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-place-content">place-content</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-grid">grid</a> (Shorthand for above i, ii, iii, viii, ix, x)</li>
+                            <br><br>
+                            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--MPKbtcLo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/cef559jfhdthqg7qzv3m.gif" alt="Alt Text" loading="lazy" width="900"  data-animated="true" id="animated-2" class="ff-image">
+                        </ol>
+                    </li>
+                    <br><br>
+                    <li><strong>Grid Item Properties:</strong> (We apply these properties to individual grid items.)
+                        <ol type="i">
+                            <li><a href="#grid-column-start">grid-column-start</a></li>
+                            <li><a href="#grid-column-end">grid-column-end</a></li>
+                            <li><a href="#grid-row-start">grid-row-start</a></li>
+                            <li><a href="#grid-row-end">grid-row-end</a></li>
+                            <li><a href="#grid-column">grid-column</a> (Shorthand for i, ii)</li>
+                            <li><a href="#grid-row">grid-row</a> (Shorthand for iii, iv)</li>
+                            <li><a href="#grid-area">grid-area</a> (Shorthand for v, vi)</li>
+                            <span class="badge text-bg-light">Above 7 properites are exolaned in this page</span>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-justify-self">justify-self</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-align-self">align-self</a></li>
+                            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/#prop-place-self">place-self</a></li>
+                        </ol>
+                    </li>
+                    <br><br>    
+                </ul>
+            </li>
+            
+            
+            <!-- grid-template-columns -->
+            <li>
+                <h3 id="grid-template-columns"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">grid-template-columns</a> property (grid-container property):</h3>
+                <ul>
+                    <li>The <code>grid-template-columns</code> CSS property defines the <b><i>column-track width</i></b> and line names of the grid columns.</li>
+                    <li>It can take multiple space seperated values, to divide the available width of the container into multiple column widths.</li>
+                    <li id="grid-template_values">Values can be:  
+                        <ul>
+                            <li><strong>fr unit: </strong>fr means fraction. This value divide the available space into fractional ratio. Example: <code>grid-template-columns: 1fr 2fr 1fr;</code></li>
+                            <li><strong>Percentage: </strong>Similar to fr units this percentage value divide the available space. Example: <code>grid-template-columns: 25% 50% 25%;</code></li>
+                            <li><strong>Fixed value: </strong>Divide the available space according to the fixed size. The problem with the fixed size value is that they are not responsive. <br>Example: <code>grid-template-columns: 100px 200px 100px;</code></li>
+                            <li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat">repeat()</a>:</strong> 
+                                <br>This CSS function allows us to avoid repetitive code when defining multiple rows or columns with similar sizes. It makes our CSS more concise and easier to maintain. 
+                                <br>This function takes 2 parameters - number-of-repetition & a grid-template value. 
+                                <br>We can use <code>auto-fill</code> & <code>auto-fit</code> keyword as 1st parameter for automatcally deciding the number-of-repetition according to the width or height of the container.
+                                <br><a href="https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/">auto-fill vs auto-fit</a>
+                                <br>Example 1: <code>grid-template-columns: repeat(3, 1fr);</code>
+                                <br>Example 2: <code>grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));</code>
+                            </li>
+                            <li><strong><a href="https://ishadeed.com/article/css-grid-minmax/">minmax()</a>: </strong> 
+                                <br>This CSS function defines a size range for grid track greater than or equal to min and less than or equal to max.
+                                <br>It takes 2 parameters- 1st is minimum value & 2nd is maximum value.
+                                <br>Example: <code>grid-template-columns: minmax(100px, 1fr);</code> This example sets columns to a minimum width of 100px and a maximum width of 1fr.
+                            </li>
+                            <li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content_function">fit-content()</a>: </strong>
+                                <br>This CSS  function allows you to create grid tracks that adjust their size to fit the content inside them, but with a specified maximum width or height. 
+                                <br>This CSS function takes 1 grid-template value as parameter.
+                                <br>Example: <code>grid-template-columns: fit-content(300px) fit-content(300px) 1fr;</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>We can combine different types of grid-template values together</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 200px 2fr auto; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Example 1: <a href="https://codepen.io/Janarddan-Mandal/pen/LYKBNNr">Go</a></li>
+                    <div style="width: 900px; resize: both; overflow: auto; border: 3px solid black;">
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="grid-template-columns" src="https://codepen.io/Janarddan-Mandal/embed/LYKBNNr?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/LYKBNNr">
+                            grid-template-columns</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                    <li>Example 2: fit-content() <a href="https://codepen.io/Janarddan-Mandal/pen/qBzybpm">Go</a></li>
+                    <div style="width: 900px; resize: both; overflow: auto; border: 3px solid black;">
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="fit-content()" src="https://codepen.io/Janarddan-Mandal/embed/qBzybpm?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/qBzybpm">
+                            fit-content()</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- grid-template-rows -->
+            <li>
+                <h3 id="grid-template-rows"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows">grid-template-rows</a> property (grid-container property):</h3>
+                <ul>
+                    <li>The <code>grid-template-rows</code> CSS property defines the <b><i>row-track height</i></b> and line names of the grid rows.</li>
+                    <li>It can take multiple space seperated values, to divide the available height of the container into multiple row heights.</li>
+                    <li>Values can be: (Similar to the values of <code><a href="#grid-template_values">grid-template-columns</a></code>)
+                        <ul>
+                            <li><strong>fr unit: </strong>Example: <code>grid-template-rows: 1fr 2fr 1fr;</code></li>
+                            <li><strong>Percentage: </strong>Example: <code>grid-template-rows: 25% 50% 25%;</code></li>
+                            <li><strong>Fixed value: </strong>Example: <code>grid-template-rows: 100px 200px 100px;</code></li>
+                            <li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat">repeat()</a>:</strong><br>Example 1: <code>grid-template-rows: repeat(3, 1fr);</code>
+                                <br>Example 2: <code>grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));</code>
+                            </li>
+                            <li><strong><a href="https://ishadeed.com/article/css-grid-minmax/">minmax()</a>: </strong>Example: <code>grid-template-rows: minmax(100px, 1fr);</code> This example sets grid-rows to a minimum height of 100px and a maximum height of 1fr.
+                            </li>
+                            <li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content_function">fit-content()</a>: </strong>Example: <code>grid-template-rows: fit-content(300px) fit-content(300px) 1fr;</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>We can combine different types of grid-template values together</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 200px 2fr auto; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Example : <a href="https://codepen.io/Janarddan-Mandal/pen/abgjpPb">Go</a></li>
+                    <div style="width: 900px; height: 400px; resize: both; overflow: auto; border: 3px solid black;">
+                        <iframe height="98%" style="width: 100%;" scrolling="no" title="grid-template-rows" src="https://codepen.io/Janarddan-Mandal/embed/abgjpPb?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/abgjpPb">
+                            grid-template-rows</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- grid-template -->
+            <li>
+                <h3 id="grid-template"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template">grid-template</a> property (grid-container property):</h3>
+                <ul>
+                    <li>The <code>grid-template</code> CSS property is a shorthand property for defining <a href="#grid-template-columns"><code>grid-template-columns</code></a>, <a href="#grid-template-rows"><code>grid-template-rows</code></a> and <a href="#grid-template-areas"><code>grid-template-areas</code></a>.</li>
+                    <li>It takes grid-template-columns values & grid-template-rows values seperated by a "forward slash" ( / ) symbol.</li>
+                    <li>Values are similar to the values of <code><a href="#grid-template_values">grid-template-columns</a></code>, grid-template-rows & grid-template-areas.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template: row values / column values; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Example : <a href="https://codepen.io/Janarddan-Mandal/pen/gONjmwe">Go</a></li>
+                    <div style="width: 900px; height: 400px; resize: both; overflow: auto; border: 3px solid black;">
+                        <iframe height="98%" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/gONjmwe?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/gONjmwe">
+                            Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </div>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- column-gap & row-gap -->
+            <li>
+                <h3 id="column-gap_&_row-gap"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap">column-gap</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap">row-gap</a> property (grid-container property):</h3>
+                <ul>
+                    <li>The <code>column-gap</code> property specifies the gap (space) between the grid columns (column tracks).</li>
+                    <li>The <code>row-gap</code> property specifies the gap (space) between the grid rows (row tracks).</li>
+                    <li>Gaps are only created in between columns and rows, and not along the edge of the grid container</li>
+                    <li>Values can be fixed size unit value or percentage(%) value.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr 1fr;
+            column-gap: 10px; 
+            row-gap: 10px;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Example (column-gap): <br>
+                        <iframe class="interactive is-default-height" height="375" width="900px" src="https://interactive-examples.mdn.mozilla.net/pages/css/column-gap.html" title="MDN Web Docs Interactive Example" allow="clipboard-write" ></iframe>
+                    </li><br><br>
+                    <li>Example (row-gap): <br>
+                        <iframe class="interactive is-default-height" height="375" width="900px" src="https://interactive-examples.mdn.mozilla.net/pages/css/row-gap.html" title="MDN Web Docs Interactive Example" allow="clipboard-write" ></iframe>
+                    </li>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- gap -->
+            <li>
+                <h3 id="gap"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap">gap</a> shorthand property:(grid-container property)</h3>
+                <ul>
+                    <li>The <code>gap</code> CSS property is a shorthand property for <code>row-gap</code> & <code>column-gap</code></li>
+                    <li>It can take 1 or 2 values:
+                        <ul>
+                            <li>Single value: <code>row-gap</code> & <code>column-gap</code> will habe the same value</li>
+                            <li>Double value: 1st value specifies the <code>row-gap</code> & 2nd value specifies the<code>column-gap</code>. 2 values are seperated by a space.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr 1fr;
+            gap: 20px 10px; 
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/bGPjRyM">Go</a></li>
+                    <iframe height="300" style="width: 900px;" scrolling="no" title="gap" src="https://codepen.io/Janarddan-Mandal/embed/bGPjRyM?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/bGPjRyM">
+                        gap</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- grid-column-start & grid-column-end -->
+            <li>
+                <h3 id="grid-column-start_&_grid-column-end"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start">grid-column-start</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end">grid-column-end</a> property (grid-items property):</h3>
+                <ul>
+                    <li>The <code>grid-column-start</code> property defines on which column-line the item will start.</li>
+                    <li>The <code>grid-column-end</code> property defines how many columns an item will span, or on which column-line the item will end</li>
+                    <li>Values can be line-number, line-name or span value.</li>
+                    <li><strong>span</strong>: This value is used to specify how many grid-cells to marge into 1 grid item. <br>Example: <code>grid-column-end: span 2;</code> This example means, the grid item will occupy 2 column-tracks form its starting line.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/RwzBLpv">Go</a></li>
+                    <iframe height="500px" style="width: 900px;" scrolling="no" title="grid-column-start &amp; grid-column-end" src="https://codepen.io/Janarddan-Mandal/embed/RwzBLpv?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/RwzBLpv">
+                        grid-column-start &amp; grid-column-end</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- grid-row-start & grid-row-end -->
+            <li>
+                <h3 id="grid-row-start_&_grid-row-end"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start">grid-row-start</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end">grid-row-end</a> property (grid-items property):</h3>
+                <ul>
+                    <li>The <code>grid-row-start</code> property defines on which row-line the item will start.</li>
+                    <li>The <code>grid-row-end</code> property defines how many rows an item will span, or on which row-line the item will end</li>
+                    <li>Values can be line-number, line-name or span value.</li>
+                    <li><strong>span</strong>: This value is used to specify how many grid-cells to marge into 1 grid item. <br>Example: <code>grid-row-end: span 2;</code> This example means, the grid item will occupy 2 row-tracks form its starting line.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/ZEdjXxJ">Go</a></li>
+                    <iframe height="500px" style="width: 900px;" scrolling="no" title="grid-row-start &amp; grid-row-end" src="https://codepen.io/Janarddan-Mandal/embed/ZEdjXxJ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/ZEdjXxJ">
+                        grid-row-start &amp; grid-row-end</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- grid-column -->
+            <li>
+                <h3 id="grid-column"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column">grid-column</a> shorthand property (grid-items property): </h3>
+                <ul>
+                    <li>This property is a shorthand for the following 2 CSS properties: <code><a href="#grid-column-start_&_grid-column-end">grid-column-start</a></code> & <code><a href="#grid-column-start_&_grid-column-end">grid-column-end</a></code></li>
+                    <li>It can take 1 or 2 values:
+                        <ul>
+                            <li>Single value: Only <code>grid-column-start</code> value</li>
+                            <li>Double value: 1st value specifies the <code>grid-column-start</code> & 2nd value specifies the<code>grid-column-end</code>. 2 values are seperated by a '/' (forward slash) symbol.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            grid-column: 2 / 4;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/VwJBgWE">Go</a></li>
+                    <iframe height="500px" style="width: 900px;" scrolling="no" title="grid-column" src="https://codepen.io/Janarddan-Mandal/embed/VwJBgWE?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/VwJBgWE">
+                        grid-column</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- grid-row -->
+            <li>
+                <h3 id="grid-row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row">grid-row</a> shorthand property (grid-items property):</h3>
+                <ul>
+                    <li>This property is a shorthand for the following 2 CSS properties: <code><a href="#grid-row-start_&_grid-row-end">grid-row-start</a></code> & <code><a href="#grid-row-start_&_grid-row-end">grid-row-end</a></code></li>
+                    <li>It can take 1 or 2 values:
+                        <ul>
+                            <li>Single value: Only <code>grid-row-start</code> value</li>
+                            <li>Double value: 1st value specifies the <code>grid-row-start</code> & 2nd value specifies the<code>grid-row-end</code>. 2 values are seperated by a '/' (forward slash) symbol.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            grid-row: 2 / 4;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/eYwjxyR">Go</a></li>
+                    <iframe height="500px" style="width: 900px;" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/eYwjxyR?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/eYwjxyR">
+                        Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- grid-area -->
+            <li>
+                <h3 id="grid-area"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area">grid-area</a> shorthand property (grid-items property):</h3>
+                <ul>
+                    <li>This property is a shorthand for the following CSS properties:
+                        <ul>
+                            <li><code><a href="#grid-row-start_&_grid-row-end">grid-row-start</a></code></li>
+                            <li><code><a href="#grid-column-start_&_grid-column-end">grid-column-start</a></code></li>
+                            <li><code><a href="#grid-row-start_&_grid-row-end">grid-row-end</a></code></li>
+                            <li><code><a href="#grid-column-start_&_grid-column-end">grid-column-end</a></code></li>
+                        </ul>
+                    </li>
+                    <li>The <code>grid-area</code> property can also be used to assign a name to a grid item. Named grid items can then be referenced to by the <code><a href="#grid-template-areas">grid-template-areas</a></code> property of the grid container. </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .item1 {
+            grid-area: row-start / column-start / row-end / column-end;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/jOjpdJy">Go</a></li>
+                    <iframe height="500px" style="width: 900px;" scrolling="no" title="grid-area" src="https://codepen.io/Janarddan-Mandal/embed/jOjpdJy?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/jOjpdJy">
+                        grid-area</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- grid-template-areas -->
+            <li>
+                <h3 id="grid-template-areas"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas">grid-template-areas</a> property:(grid-container property)</h3>
+                <ul>
+                    <li>The <code>grid-template-areas</code> CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.</li>
+                    <li>This type of grid-template is visually understandable.</li>
+                    <li>We can use this named cell as the value of <code><a href="#grid-area">grid-area</a></code> for easily adjusting grid-item's size.</li>
+                    <li>We can use <code>grid-template-areas</code> along with <code>grid-template-rows</code> & <code>grid-template-columns</code>. The <code>grid-template-rows</code> & <code>grid-template-columns</code> for sizing and <code>grid-template-areas</code> for assigning names to the grid-cells.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template-areas:
+                        "nav nav"
+                        "main main"
+                        "foot foot";
+        }
+
+        .item1{
+            grid-area: nav;
+        }
+        .item2{
+            grid-area: main;
+        }
+        .item3{
+            grid-area: foot;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/bGPjJaQ">Go</a></li>
+                    <iframe height="400px" style="width: 900px;" scrolling="no" title="grid-template-areas" src="https://codepen.io/Janarddan-Mandal/embed/bGPjJaQ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/bGPjJaQ">
+                        grid-template-areas</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- grid-auto-flow -->
+            <li>
+                <h3 id="grid-auto-flow"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">grid-auto-flow</a> property (grid-container property):</h3>
+                <ul>
+                    <li>The <code>grid-auto-flow</code> CSS property used to control the arrangement of the grid-items.</li>
+                    <li>Values can be:
+                        <ul>
+                            <li><code>row</code>: Default value. Places grid-items by filling each row, adding new rows as necessary.</li>
+                            <li><code>column</code>: Places grid-items by filling each column, adding new columns as necessary.</li>
+                            <li><code>dense</code>: When combined with <code>row</code> or <code>column</code>, this value makes the grid layout "dense". This means that the auto-placement algorithm will try to fill in gaps in the grid with grid-items that can fit, rather than leaving them empty.</li>
+                        </ul>
+                    </li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+            grid-auto-flow: column;
+        }
+    </code>
+                        </pre>
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/VwJBOxq">Go</a></li>
+                    <iframe height="400" style="width: 900px;" scrolling="no" title="grid-auto-flow" src="https://codepen.io/Janarddan-Mandal/embed/VwJBOxq?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/VwJBOxq">
+                        grid-auto-flow</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+            <!-- grid-auto-rows_&_grid-auto-columns -->
+            <li>
+                <h3 id="grid-auto-rows_&_grid-auto-columns"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows">grid-auto-rows</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns">grid-auto-columns</a> property:(grid-container property)</h3>
+                <ul>
+                    <li>These 2 properties are useful when some grid-items does not fit into the grid-template or when some grid-items are dynamically created, to set the size of the grid-items.</li>
+                    <li><code>grid-auto-rows</code>: Sets the height of the extra grid-row-track.</li>
+                    <li><code>grid-auto-columns</code>: Sets the width of the extra grid-column-track.</li>
+                    <li>Values are similar to the values of <code><a href="#grid-template_values">grid-template-columns</a></code>, grid-template-rows & grid-template-areas.</li>
+                    <li>Syntax:
+                        <pre>
+    <code>
+        .container {
+            display: grid;
+            grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+
+            grid-auto-rows: 50px;
+
+            <!-- grid-auto-flow: column;
+            grid-auto-columns: 100px; -->
+        }
+    </code>         </pre>
+                        
+                    </li> 
+                    <li>Demo: <a href="https://codepen.io/Janarddan-Mandal/pen/ExBpBZO">Go</a></li>
+                    <iframe height="400px" style="width: 900px;" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/ExBpBZO?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/ExBpBZO">
+                        Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+                <br><br>
+            </li>
+
+
+            <!-- Other cheat sheet & Practice -->
+            <li>
+                <h3 id="Practice">Other cheat sheet & Practice :</h3>
+                <ul>             
+                    <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS-Tricks</a> CSS Grid Layout Guide</li>
+                    <li><a href="https://tympanus.net/codrops/css_reference/grid/">codrops</a></li>
+                    <li><a href="https://cssgridgarden.com/">Grid Garden</a></li>
+                </ul>
+            </li>
+
+            <!-- End -->
+
+        </ol>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+</body>
+</html>
+

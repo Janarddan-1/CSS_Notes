@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Box_Model</title>
+</head>
+<body>
+    <nav class="bg-body-tertiary">
+        <div class="d-flex">
+            <a class="align-self-center m-2 ms-3" fdprocessedid="a7scb4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"></path>
+                </svg>
+            </a>
+            <h1 style="font-size: 48px; margin-left: 48px; padding: 20px 0;">Chapter 5: CSS Box Model</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><br>
+    
+        <h2>Topics we are going to learn in this page: </h2>
+        <ol>
+            <li><a href="#border"><strong>border Property</strong></a></li>
+            <li><a href="#width_&_heignt"><strong>width & heignt Property</strong></a></li>
+            <li><a href="#min&max_width"><strong>min-width & max-width Property</strong></a></li>
+            <li><a href="#padding"><strong>padding Property</strong></a></li>
+            <li><a href="#margin"><strong>margin Property</strong></a></li>
+            <li><a href="#box-sizing"><strong>box-sizing Property (Alternate Box Model)</strong></a></li>
+            <li><a href="#display"><strong>display Property (inline, block, inline-block, none)</strong></a></li>
+            <li><a href="#Margin_Collapsing"><strong>Margin Collapsing</strong></a></li>
+            <li><a href="#border-radius"><strong>border-radius Property</strong></a></li>
+            <li><a href="#box-shadow"><strong>box-shadow Property</strong></a></li>
+            <li><a href="#overflow"><strong>overflow Property</strong></a></li>
+            <li><a href="#object-fit"><strong>object-fit Property</strong></a></li>
+
+        </ol>
+        <br>
+
+        <h2>Explantion of the topics: </h2>
+        <ol>
+            <!-- border -->
+            <li>
+                <h3 id="border"> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border">border </a>Property:</h3>
+                <ul>
+                    <li>The CSS border properties used to specify the style, width, and color of an element's border.</li>
+                    <li>It is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width"><code>border-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style</code></a> (required), <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color  "><code>border-color</code></a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width"><code>border-width:</code></a></li>
+                        <ol type="i">
+                            <li>This property value can be <code>thin, medium, thick and any size value</code>. Can set 1 (same in all 4 sides) or 2(top & bottom | left & right) or 3(top | left & right | bottom ) or 4(top | right | bottom | left) values.</li>
+                            <li>It is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width"><code>border-top-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-width"><code>border-right-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-width"><code>border-bottom-width</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-width"><code>border-left-width</code></a>. We can set this properties separately to use as a alternative of underline.</li>
+                            <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-width.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                        </ol>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><code>border-style:</code></a></li>
+                        <ol type="i">
+                            <li>This property value can be <code>none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset.</code>. Can set 1 (same in all 4 sides) or 2(top & bottom | left & right) or 3(top | left & right | bottom ) or 4(top | right | bottom | left) values.</li>
+                            <li>It is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-style"><code>border-top-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-style"><code>border-right-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-style"><code>border-bottom-style</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style"><code>border-left-style</code></a>.</li>
+                            <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-style.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                        </ol>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color"><code>border-color:</code></a></li>
+                        <ol type="i">
+                            <li>We can set 1 (same in all 4 sides) or 2(top & bottom | left & right) or 3(top | left & right | bottom ) or 4(top | right | bottom | left) color values.</li>
+                            <li>It is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color"><code>border-top-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color"><code>border-right-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color"><code>border-bottom-color</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color"><code>border-left-color</code></a>.</li>
+                            <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-color.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                        </ol>
+                    <li>The <code>border</code> shorthand property values can be:</li>
+
+                    <pre>
+    <code>
+        /* style */
+        border: solid;
+
+        /* width | style */
+        border: 2px dotted;
+
+        /* style | color */
+        border: outset #f33;
+
+        /* width | style | color */
+        border: medium dashed green;
+
+        /* Global values */
+        border: inherit;
+        border: initial;
+        border: revert;
+        border: revert-layer;
+        border: unset;               
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/border.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <!-- width & heignt -->
+            <li>
+                <h3 id="width_&_heignt"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border">width & heignt </a>Property:</h3>
+                <ul>
+                    <li>The <code>width</code> & <code>height</code>  CSS property sets an element's width & height respectively.</li>
+                    <li>By default, these properties set the width & height of the content area (without including the padding & border width). </li>
+                    <li>But if <code>box-sizing</code> is set to <code>border-box;</code> then these properties set the width & height of t he border area (including the paddin & border width). </li>
+                    <li>If we set the value as a percentage(%) value then the width & height are set according to the width & height of it's parent container.</li>
+                    <li>The <code>width</code> property value can be:</li>
+                    <pre>
+    <code>
+        /* length values */
+        width: 300px;
+        width: 25em;
+        width: anchor-size(--myAnchor inline, 120%);
+        width: minmax(100px, anchor-size(width));
+        
+        /* percentage value */
+        width: 75%;
+        
+        /* Keyword values */
+        width: max-content;
+        width: min-content;
+        width: fit-content;
+        width: fit-content(20em);
+        width: auto;
+        
+        /* Global values */
+        width: inherit;
+        width: initial;
+        width: revert;
+        width: revert-layer;
+        width: unset;                
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/width.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                    <li>The <code>height</code> property value can be:</li>
+                    <pre>
+    <code>
+        /* length values */
+        height: 120px;
+        height: 10em;
+        height: 100vh;
+        height: anchor-size(height);
+        height: anchor-size(--myAnchor self-block, 250px);
+        height: clamp(200px, anchor-size(width));
+        
+        /* percentage value */
+        height: 75%;
+        
+        /* Keyword values */
+        height: max-content;
+        height: min-content;
+        height: fit-content;
+        height: fit-content(20em);
+        height: auto;
+        height: minmax(min-content, anchor-size(width));
+        
+        /* Global values */
+        height: inherit;
+        height: initial;
+        height: revert;
+        height: revert-layer;
+        height: unset;                     
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/height.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <!-- min-width & max-width Property -->
+            <li>
+                <h3 id="min&max_width"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width">min-width</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-width">max-width</a> Property:</h3>
+                <ul>
+                    <li>The <code>min-width</code> CSS property sets the minimum width of an element.</li>
+                    <li>If the content is smaller than the minimum width, the minimum width will be applied. If the content is larger than the minimum width, the min-width property has no effect.</li>
+                    <li>The <code>max-width</code> property defines the maximum width of an element.</li>
+                    <li>If the content is larger than the maximum width, it will automatically change the height of the element. If the content is smaller than the maximum width, the max-width property has no effect.</li>
+                    <li>Similarly <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height">min-heignt</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-height">max-heignt</a> property also     works.</li>
+                    <li>The <code>min-width</code> property value can be:</li>
+                    <pre>
+    <code>
+        /* length value */
+        min-width: 3.5em;
+        min-width: anchor-size(width);
+        min-width: anchor-size(--myAnchor self-inline, 200%);
+        
+        /* percentage value */
+        min-width: 10%;
+        
+        /* Keyword values */
+        min-width: max-content;
+        min-width: min-content;
+        min-width: fit-content;
+        min-width: fit-content(20em);
+        
+        /* Global values */
+        min-width: inherit;
+        min-width: initial;
+        min-width: revert;
+        min-width: revert-layer;
+        min-width: unset;                    
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/min-width.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                    <li>The <code>max-width</code> property value can be:</li>
+                    <pre>
+    <code>
+        /* length value */
+        max-width: 3.5em;
+        max-width: anchor-size(--myAnchor inline, 245px);
+        max-width: calc(anchor-size(width) + 4em);
+        
+        /* percentage value */
+        max-width: 75%;
+        
+        /* Keyword values */
+        max-width: none;
+        max-width: max-content;
+        max-width: min-content;
+        max-width: fit-content;
+        max-width: fit-content(20em);
+        
+        /* Global values */
+        max-width: inherit;
+        max-width: initial;
+        max-width: revert;
+        max-width: revert-layer;
+        max-width: unset;                   
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/max-width.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <!-- padding -->
+            <li>
+                <h3 id="padding"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding">padding</a> Property:</h3>
+                <ul>
+                    <li>Padding is the space optionally can be added between the outer-edge of the content-box & the inner side of the border.</li>
+                    <li><code>padding</code> is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top"><code>padding-top</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right"><code>padding-right</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom"><code>padding-bottom</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left"><code>padding-left</code></a>.</li>
+                    <li>The <code>padding</code> property sets the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#padding_area">padding area</a> on all four sides of an element at once.</li>
+                    <li>The value can be:</li>
+                    <pre>
+    <code>
+        /* Apply to all four sides */
+        padding: 1em;
+
+        /* top and bottom | left and right */
+        padding: 5% 10%;
+
+        /* top | left and right | bottom */
+        padding: 1em 2em 2em;
+
+        /* top | right | bottom | left */
+        padding: 5px 1em 0 2em;
+
+        /* Global values */
+        padding: inherit;
+        padding: initial;
+        padding: revert;
+        padding: revert-layer;
+        padding: unset;    
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/padding.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <!-- margin -->
+            <li>
+                <h3 id="margin"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">margin</a> Property:</h3>
+                <ul>
+                    <li>Margins are used to create space around elements, outside of any defined borders.</li>
+                    <li><code>margin</code> is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top"><code>margin-top</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right"><code>margin-right</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom"><code>margin-bottom</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left"><code>margin-left</code></a>.</li>
+                    <li>The <code>margin</code> sets the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#margin_area">margin area</a> on all four sides of an element at once.</li>
+                    <li>Margin value can also be negative.</li>
+                    <li>The value can be:</li>
+                    <pre>
+    <code>
+        /* Apply to all four sides */
+        margin: 1em;
+        margin: -3px;
+
+        /* top and bottom | left and right */
+        margin: 5% auto;
+
+        /* top | left and right | bottom */
+        margin: 1em auto 2em;
+
+        /* top | right | bottom | left */
+        margin: 2px 1em 0 auto;
+
+        /* Global values */
+        margin: inherit;
+        margin: initial;
+        margin: revert;
+        margin: revert-layer;
+        margin: unset;
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/margin.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                    <li>Centering element horizontally: For <a href="https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content">block-level_element</a>(<code>display: block;</code>) if we set a smaller width than its parent container and the <code>margin-left</code> & <code>margin-right</code> set as <code>auto;</code> then the element positioned horizontally center of its parent comntainer. Example: <a href="https://codepen.io/Janarddan-Mandal/pen/dyBpajN">Go</a></li>
+                    <iframe height="300" width="900px" scrolling="no" title="margin: auto; (horizontal centering)" src="https://codepen.io/Janarddan-Mandal/embed/dyBpajN?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/dyBpajN">
+                        margin: auto; (horizontal centering)</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </ul>
+            </li>
+            <br>
+
+            <!-- box-sizing -->
+            <li>
+                <h3 id="box-sizing"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing">box-sizing</a> Property (Alternate Box Model):</h3>
+                <ul>
+                    <li>The <code>box-sizing</code> CSS property sets how the total width and height of an element is calculated.</li>
+                    <li>Normal Box-Model: In default box model(<code>box-sizing: content-box;</code>), the width and height we assign to an element is applied only to the element's content box (Not including padding and border width).</li>
+                    <li>Alternate Box-Model: If we set <code>box-sizing: border-box;</code>, then the width and height we assign to an element is applied to the element's border box (Including padding and border width). In this mode if we add <code>padding</code> and <code>border</code> value then the content box size become smaller.</li>
+                    <li>The value can be:</li>
+                    <pre>
+    <code>
+        box-sizing: border-box;
+        box-sizing: content-box;
+
+        /* Global values */
+        box-sizing: inherit;
+        box-sizing: initial;
+        box-sizing: revert;
+        box-sizing: revert-layer;
+        box-sizing: unset;
+    </code>
+                    </pre>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/GRbjVGp">GO</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="box-sizing" src="https://codepen.io/Janarddan-Mandal/embed/GRbjVGp?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/GRbjVGp">
+                            box-sizing</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+
+
+            <!-- display Property (inline, block, inline-block, none) -->
+            <li>
+                <h3 id="display"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display</a> Property (inline, block, inline-block, none):</h3>
+                <ul>
+                    <li>The display property specifies the display behavior (the type of rendering box) of an element.</li>
+                    <li><a href="https://www.w3schools.com/html/html_blocks.asp">Block-level Elements:</a> This elements always starts on a new line, and the browsers automatically add some space (a margin) before and after the element. A block-level element always takes up the full width available (stretches out to the left and right as far as it can).Example: <code>&lt;h1&gt;, &lt;p&gt;, &lt;div&gt;</code>.</li>
+                    <li><a href="https://www.w3schools.com/html/html_blocks.asp">Inline Elements:</a> An inline element only takes up as much width as necessary. This element does not start on a new line. Example: <code>&lt;a&gt;, &lt;span&gt;, &lt;input&gt;, &lt;img&gt;</code>.</li>
+                    <li>The <code>display</code> property value can be <code> block, inline, inline-block, none, flex, inline-flex, grid, inline-grid, flow-root etc.</code>But in this chapter we will discuss only <code>block, inline, inline-block, none</code>.
+                        <ol type="i">
+                            <li><code>display: block;</code> makes any element a block level element. In block-level element padding, border & margin properties are visible on all 4 sides of the element.</li>
+                            <li><code>display: inline;</code> makes any element a inline element. In inline element padding, border & margin properties are only visible in left & right direction but not on the top & bottom direction.</li>
+                            <li><code>display: inline-block;</code> This makes padding, border & margin effect visible on all 4 sides of the element like a block-level element. And also can have other elements on the left & right side of the element like an inline element.(Does not takes up the full width available)</li>
+                            <li><code>display: none;</code> makes the element disappeat from the page (Not even blank space). This value is useful for responsive web-design to hide some element from the page on a smaller screen size.</li>
+                        </ol>
+                    </li>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/eYwBYed">Go</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="display Property (inline, block, inline-block, none)" src="https://codepen.io/Janarddan-Mandal/embed/eYwBYed?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/eYwBYed">
+                            display Property (inline, block, inline-block, none)</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                        <br><br>
+                    </li>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/display.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+            <br>
+
+            <!-- Margin Collapsing -->
+            <li>
+                <h3 id="Margin_Collapsing"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing">Margin Collapsing</a>:</h3>
+                <ul>
+                    <li>The top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the individual margins (or just one of them, if they are equal), a behavior known as margin collapsing.</li>
+                    <li>This does not happen on left and right margins! Only top and bottom margins! Margins don't collapse in a container with <code>display</code> set to <code>flex</code> or <code>grid</code>.</li>
+                    <li>Note that the margins of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">floating</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#types_of_positioning">absolutely positioned</a> elements never collapse.</li>
+                    <li>When negative margins are involved, the size of the collapsed margin is the sum of the largest positive margin and the smallest (most negative) negative margin.</li>
+                    <li>When all margins are negative, the size of the collapsed margin is the smallest (most negative) margin. This applies to both adjacent elements and nested elements.</li>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/poXNJbZ">Go</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="Margin collapsing" src="https://codepen.io/Janarddan-Mandal/embed/poXNJbZ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/poXNJbZ">
+                            Margin collapsing</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <!-- border-radius -->
+            <li>
+                <h3 id="border-radius"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">border-radius</a> Property:</h3>
+                <ul>
+                    <li>The border-radius CSS property rounds the corners of an element's outer border edge.</li>
+                    <li><code>border-radius</code> is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-left-radius"><code>border-top-left-radius</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-right-radius"><code>border-top-right-radius</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-right-radius"><code>border-bottom-right-radius</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-left-radius"><code>border-bottom-left-radius</code></a>. This individual properties can have 1 value for perfecrly rounded corner & also can have 2 space-separated values(horizontal-rdious & vertical-rdious) for elliptical corner.</li>
+                    <li>The <code>border-radius</code> property value can be:</li>
+                    <pre>
+    <code>
+        /* without '/' */
+        /* Radius is set for all 4 sides */
+        border-radius: 10px;
+
+        /* top-left-and-bottom-right | top-right-and-bottom-left */
+        border-radius: 10px 5%;
+
+        /* top-left | top-right-and-bottom-left | bottom-right */
+        border-radius: 2px 4px 2px;
+
+        /* top-left | top-right | bottom-right | bottom-left */
+        border-radius: 1px 0 3px 4px;
+    ------------------------------------------------------------------------------------------
+        /* with '/' */
+        /* horizontal radius of all 4 corner / vertical rdious radius of all 4 corner */
+        border-radius: 10px / 20px;
+
+        /* horizontal top-left-and-bottom-right | horizontal top-right-and-bottom-left / vertical top-left-and-bottom-right | horizontal top-right-and-bottom-left */
+        border-radius: 10px 5% / 20px 30px;
+
+        /* horizontal top-left | horizontal top-right-and-bottom-left | horizontal bottom-right / vertical top-left | vertical top-right-and-bottom-left | vertical bottom-right */
+        border-radius: 10px 5px 2em / 20px 25px 30%;
+
+        /* (horizontal radius values) / vertical top-left | vertical top-right | vertical bottom-right | vertical bottom-left */
+        border-radius: 10px 5% / 20px 25em 30px 35em;
+
+        /* Global values */
+        border-radius: inherit;
+        border-radius: initial;
+        border-radius: revert;
+        border-radius: revert-layer;
+        border-radius: unset;
+
+    </code>
+                    </pre>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/border-radius.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/vYqyGbJ">Go</a><br>
+                        <iframe height="300px" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/vYqyGbJ?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/vYqyGbJ">
+                            Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+            <!-- box-shadow -->
+            <li>
+                <h3 id="box-shadow"><a href="https://www.w3schools.com/css/css3_shadows_box.asp">box-shadow</a> Property:</h3>
+                <ul>
+                    <li>The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas.</li>
+                    <li>Box shadow template: <a href="https://getcssscan.com/css-box-shadow-examples">Go</a></li>
+                    <li>Syntax:
+                        <ol type="i">
+                            <li><code>box-shadow: 10px 10px;</code> (Only specify a horizontal and a vertical shadow. The default color of the shadow is the current text-color)</li>
+                            <li><code>box-shadow: 10px 10px lightblue;</code> (The color parameter defines the color of the shadow)</li>
+                            <li><code>box-shadow: 10px 10px 5px lightblue;</code> (3rd value is the blur value. The blur parameter defines the blur radius)</li>
+                            <li><code>box-shadow: 10px 10px 5px 12px lightblue;</code> (4th value is the spread value. The spread parameter defines the spread radius. A positive value increases the size of the shadow, a negative value decreases the size of the shadow)</li>
+                            <li><code>box-shadow: 10px 10px 5px lightblue inset;</code> (The inset parameter changes the shadow from an outer shadow (outset) to an inner shadow.)</li>
+                        </ol>
+                    </li>
+                    <li>Other value can be:</li>
+                    <pre>
+    <code>
+        /* Global values */
+        box-shadow: inherit;
+        box-shadow: initial;
+        box-shadow: revert;
+        box-shadow: revert-layer;
+        box-shadow: unset;
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/box-shadow.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+            
+            <!-- overflow Property -->
+            <li>
+                <h3 id="overflow"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow">overflow</a> Property:</h3>
+                <ul>
+                    <li>The overflow property sets the desired behavior when content does not fit in the element's padding box (overflows) in the horizontal and/or vertical direction.</li>
+                    <li><code>overflow</code> is a shorthand property for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-x"><code>overflow-x</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y"><code>overflow-y</code></a>.</li>
+                    <li>Can set 1 (same value for both <code>overflow-x</code> & <code>overflow-y</code>) or 2(<code>overflow-x</code> | <code>overflow-y</code>) values separated by blank space.</li>
+                    <li>The overflow property has the following values:
+                        <ol type="i">
+                            <li><code>overflow: visible;</code> (Default value. The content renders outside the element's box. The overflow is not clipped)</li>
+                            <li><code>overflow: hidden;</code> (The overflow is clipped, and the rest of the content will be invisible)</li>
+                            <li><code>overflow: scroll;</code> (The overflow is clipped, and a scrollbar is added to see the rest of the content)</li>
+                            <li><code>overflow: auto;</code> (Similar to <code>scroll</code>, but it adds scrollbars only when necessary)</li>
+                        </ol>
+                    </li>
+                    <li>Other values can be:</li>
+                    <pre>
+    <code>
+        /* Global values */
+        overflow: inherit;
+        overflow: initial;
+        overflow: revert;
+        overflow: revert-layer;
+        overflow: unset;
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/overflow.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                </ul>
+            </li>
+            <br>
+
+
+            <!-- object-fit -->
+            <li>
+                <h3 id="object-fit"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">object-fit</a> Property:</h3>
+                <ul>
+                    <li>The <code>object-fit</code> property is used to specify how an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> should be resized to fit its container.</li>
+                    <li>This property tells the content to fill the container in a variety of ways; such as "preserve that aspect ratio" or "stretch up and take up as much space as possible".</li>
+                    <li>The object-fit property can take one of the following values:
+                        <ol type="i">
+                            <li>fill - This is default. The image is resized to fill the given dimension. If necessary, the image will be stretched or squished to fit.</li>
+                            <li>contain - The image keeps its aspect ratio, but is resized to fit within the given dimension.</li>
+                            <li>cover - The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit.</li>
+                            <li>none - The image is not resized.</li>
+                            <li>scale-down - the image is scaled down to the smallest version of none or contain.</li>
+                        </ol>
+                    </li>
+                    <li>Other values can be:</li>
+                    <pre>
+    <code>
+        /* Global values */
+        object-fit: inherit;
+        object-fit: initial;
+        object-fit: revert;
+        object-fit: revert-layer;
+        object-fit: unset;
+    </code>
+                    </pre>
+                    <li>Example: <br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/object-fit.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                    </li>
+                </ul>
+            </li>
+            
+            <!-- End -->
+
+        </ol>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+</body>
+</html>
+
+

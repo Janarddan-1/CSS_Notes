@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Positioning</title>
+</head>
+<body>
+    <nav class="bg-body-tertiary">
+        <div class="d-flex">
+            <a class="align-self-center m-2 ms-3" fdprocessedid="a7scb4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"></path>
+                </svg>
+            </a>
+            <h1 style="font-size: 48px; margin-left: 48px; padding: 20px 0;">Chapter 8: CSS Positioning</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br><br>
+        <h2>Topics we are going to learn in this page: </h2>
+        <ol>
+            <li><a href="#position"><strong>position property</strong></a></li>
+            <li><a href="#static"><strong>Static Positioning (position: static;)</strong></a></li>
+            <li><a href="#relative"><strong>Relative Positioning (position: relative;)</strong></a></li>
+            <li><a href="#z-index"><strong>z-index property</strong></a></li>
+            <li><a href="#absolute"><strong>Absolute Positioning (position: absolute;)</strong></a></li>
+            <li><a href="#fixed"><strong>Fixed Positioning (position: fixed;)</strong></a></li>
+        </ol>
+        <br>
+        
+        <h2>Explantion of the topics: </h2>
+        <ol>
+            <!-- position -->
+            <li>
+                <h3 id="position"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">position </a>property:</h3>
+                <ul>
+                    <li>Positioning: Positioning allows us to take elements out of normal document flow and make them behave differently.</li>
+                    <li>We can set the positioning using these 6 css properties:
+                        <ul>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"><code>position</code></a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top"><code>top</code></a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom"><code>bottom</code></a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/left"><code>left</code></a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/right"><code>right</code></a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"><code>z-index</code></a></li>
+                        </ul>
+                    </li>
+                    <li>The <code>position</code> property sets how an element is positioned (static, relative, absolute, fixed, sticky) in a document.</li>
+                    <!-- <li>The <code>top</code> & <code>bottom</code> CSS property sets the vertical position of a positioned element (Positioned element means, element with any <code>position</code> value other than default value "<code>static</code>") relative to something (root, parent, self).</li> -->
+                    <li>The <code>top</code> & <code>bottom</code> CSS property specify the vertical shifting of a positioned element.<br>(Positioned element means, element with any <code>position</code> value other than default value "<code>static</code>")</li>
+                    <li>We should not use <code>top</code> & <code>bottom</code> together for the same element. If both are specified then <code>top</code> wins.</li>
+                    <li>The <code>left</code> & <code>right</code> CSS property specify the horizontal shifting of a positioned element.</li>
+                    <li>We should not use <code>left</code> & <code>right</code> together for the same element. If both are specified then <code>left</code> wins (when language direction is left to right).</li>
+                    <li>The <code>z-index</code> specify which element will be on the top if overlapping happen.</li>
+                    <br><br>
+                        <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/position.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- static -->
+            <li>
+                <h3 id="static"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#static">Static</a>  Positioning (<code>position: static;</code>):</h3>
+                <ul>
+                    <li>For all HTML elements the default value of <code>position</code> property is <code>static</code>.</li>
+                    <li>The element is positioned according to the Normal Flow of the document. </li>
+                    <li>The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>z-index</code> properties have no effect.</li>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/eYwvVPL">Go</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="static_position" src="https://codepen.io/Janarddan-Mandal/embed/eYwvVPL?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/eYwvVPL">
+                            static_position</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- relative -->
+            <li>
+                <h3 id="relative"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#relative">Relative</a>  Positioning (<code>position: relative;</code>):</h3>
+                <ul>
+                    <li>The element is positioned according to the normal flow of the document.</li>
+                    <li>The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>z-index</code> properties are used to shift the element.</li>
+                    <li>Shifting is relative to its default position.</li>
+                    <li>Even if the element is shifted, its initial space (with margin) in the document is maintained. (The offset does not affect the position of any other elements)</li>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/NWZpYGy">Go</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/NWZpYGy?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/NWZpYGy">
+                            Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- z-index -->
+            <li>
+                <h3 id="z-index"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index">z-index</a> property:</h3>
+                <ul>
+                    <li>The <code>z-index</code> property determine which element will go on the top (along Z-axis) if overlapping happen between two or more positioned elements. <br>(Positioned element means, element with any <code>position</code> value other than "<code>static</code>")</li>
+                    <li>An element with greater <code>z-index</code> will be on the top of an element with a lower <code>z-index</code>.</li>
+                    <li>Default value 0. The value can be both positive & negative.</li>
+                    <li>If two positioned elements overlap without a z-index specified, the element positioned last in the HTML code will be shown on top. </li>
+                    <iframe class="interactive is-default-height" width="900px" height="375px" src="https://interactive-examples.mdn.mozilla.net/pages/css/z-index.html" title="MDN Web Docs Interactive Example" allow="clipboard-write"></iframe>
+                </ul>
+            </li>
+
+            <!-- absolute -->
+            <li>
+                <h3 id="absolute"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute">Absolute</a>  Positioning (<code>position: absolute;</code>):</h3>
+                <ul>
+                    <li>The element is removed the normal flow of the document.</li>
+                    <li>No space is left (reserved) where the element used to be.(The offset affects the position of other elements)</li>
+                    <li>The element is positioned relative to its closest positioned ancestor.(Positioned element means, element with any <code>position</code> value other than "<code>static</code>")</li>
+                    <li>If there is no positioned ancestor then its position is relative to root element (top left corner of the page).</li>
+                    <li>The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>z-index</code> properties are used to shift the position of the element.</li>
+                    <li>Example 1: <a href="https://codepen.io/Janarddan-Mandal/pen/XWLMYEP">Go</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/XWLMYEP?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/XWLMYEP">
+                            Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                    <li>Example 2: <a href="https://codepen.io/Janarddan-Mandal/pen/yLdMEQj">Go</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/yLdMEQj?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/yLdMEQj">
+                            Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- fixed -->
+            <li>
+                <h3 id="fixed"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position#fixed">Fixed</a> Positioning (<code>position: fixed;</code>):</h3>
+                <ul>
+                    <li>The element is removed the normal flow of the document.</li>
+                    <li>No space is left (reserved) where the element used to be.(The offset affects the position of other elements)</li>
+                    <li>The element is positioned relative to the viewport window.</li>
+                    <li>The <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, and <code>z-index</code> properties are used to shift the position of the element.</li>
+                    <li>When we scroll the page, the element always stay in place.</li>
+                    <li>Example: <a href="https://codepen.io/Janarddan-Mandal/pen/jOjBpVv">Go</a><br>
+                        <iframe height="300" width="900px" scrolling="no" title="Untitled" src="https://codepen.io/Janarddan-Mandal/embed/jOjBpVv?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/Janarddan-Mandal/pen/jOjBpVv">
+                            Untitled</a> by Janarddan Mandal (<a href="https://codepen.io/Janarddan-Mandal">@Janarddan-Mandal</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                    </li>
+                </ul>
+            </li>
+
+
+            <!-- End -->
+
+        </ol>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+</body>
+</html>
+
+
